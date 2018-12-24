@@ -1,0 +1,16 @@
+.about-us{
+    margin: auto;
+    line-height: 22px;
+    max-width: 600px;
+}
+
+.about-us-container {
+    margin-bottom: 600px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about-us p {
+    text-align: center;
+    padding-top: 20px;
+}

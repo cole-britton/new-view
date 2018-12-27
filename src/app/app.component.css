@@ -5,7 +5,6 @@
 }
 
 .about-us-container {
-    margin-bottom: 600px;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -13,4 +12,19 @@
 .about-us p {
     text-align: center;
     padding-top: 20px;
+}
+
+.unit-gif-container{
+    display: inline-block;
+    width: 300px;
+    margin: 10px 20px;
+}
+
+.gif-image{
+    width: 100%;
+}
+
+.section-gifs{
+    margin: 6vw;
+    text-align: center;
 }

@@ -499,7 +499,7 @@ a{
     opacity:1;
     visibility:visible;
     z-index:1000;
-    -webkit-overflow-scrolling:touch
+    -webkit-overflow-scrolling:touch;
 }
 .screen.is-active .screen__wrap{
     pointer-events:auto

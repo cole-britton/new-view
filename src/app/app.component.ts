@@ -17,6 +17,16 @@ export class AppComponent {
 
   }
 
+  onNavigate(urlFromPage: string) {
+    let url: string = '';
+    if (!/^http[s]?:\/\//.test(urlFromPage)) {
+      url += 'http://';
+    }
+
+    url += urlFromPage;
+    window.open(url, "_blank");
+  }
+
 
   menuToggle() {
     if (this.isNaviOpen) {

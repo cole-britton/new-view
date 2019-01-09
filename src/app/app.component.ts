@@ -1,4 +1,5 @@
 import { Component, Renderer } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,33 +8,8 @@ import { Component, Renderer } from '@angular/core';
 })
 export class AppComponent {
   title = 'new-view';
-  isNaviOpen = false;
-
-
-  aboutUs = "New View was founded in 2018 with a bold purpose in mind: to change the way apartment communities market their availability, forever. In today’s modern age, customer needs evolve on a day to day basis, and saving time is more important than ever. The team at New View has dedicated their skillset to reimagining the prospect experience to benefit both the tenant and the leasing staff. We have to admit, we’re proud of our results. New View is placing engaging, cinematic, virtual walkthroughs in the hands of leasing professionals to equip them with a tool never before utilized by marketing strategies of the past. We love the way it works, and so do your prospects. Saving you time while creating a more engaged, educated, and interested potential tenant is our number one goal."
-
-
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
-  onNavigate(urlFromPage: string) {
-    let url: string = '';
-    if (!/^http[s]?:\/\//.test(urlFromPage)) {
-      url += 'http://';
-    }
-
-    url += urlFromPage;
-    window.open(url, "_blank");
-  }
-
-
-  menuToggle() {
-    if (this.isNaviOpen) {
-      document.getElementById('siteContainer').className = 'site-container';
-    } else {
-      document.getElementById('siteContainer').className = 'is-navi-open site-container';
-    }
-    this.isNaviOpen = !this.isNaviOpen;
-  }
 }

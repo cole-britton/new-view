@@ -11,6 +11,9 @@ export class PriceToolComponent implements OnInit {
   averagesqft: number;
   units: number;
   upload: boolean = false;
+  totalAmenitySqft: number;
+  spaces: number;
+  amenities: boolean = false;
 
 
   constructor() { }
@@ -18,9 +21,12 @@ export class PriceToolComponent implements OnInit {
   calcTotal() {
     var tempTotal = 0;
     var costPerSqFt = .125;
+    var costPerSqFtAmenity = .20;
     var discountPerExtraUnit = .0001285714;
+    var uploadCost = 5;
+    var uploadDenominator = 2.65;
 
-    if (this.averagesqft != null && this.units != null) {
+    if (this.averagesqft != null && this.units != null && this.averagesqft > 0 && this.units > 0) {
       if (this.units <= 50) {
         tempTotal = costPerSqFt * this.averagesqft * this.units;
       } else {
@@ -31,20 +37,23 @@ export class PriceToolComponent implements OnInit {
         if (remainingUnits > 350) {
           newCostPerSqFt = .08;
         }
-        
-        console.log("------------------new calc------------------");
-        console.log("remaining units: " + remainingUnits);
-        console.log("discount: " + discount);
-        console.log("newCostPerSqFt: " + newCostPerSqFt);
-        console.log("tempTotal before: " + tempTotal);
         tempTotal = tempTotal + (remainingUnits * newCostPerSqFt * this.averagesqft);
-        console.log("tempTotal after: " + tempTotal);
       }
+
+      if (this.upload) {
+        var uploadBonus = (uploadCost/uploadDenominator) * (this.averagesqft/1000);
+        tempTotal = tempTotal + ((uploadBonus + uploadCost) * this.units);
+      }
+
+      if (this.totalAmenitySqft != null && this.spaces != null && this.amenities) {
+        if (this.spaces > 0) {
+          tempTotal = tempTotal + ((this.totalAmenitySqft / this.spaces) * this.spaces * costPerSqFtAmenity);
+        }
+      }
+
     }
 
-    if (this.upload) {
-      tempTotal = tempTotal + (5 * this.units);
-    }
+
 
     tempTotal = Math.floor(tempTotal); //round to nearest dollar
     this.totalPrice = "$" + this.numberWithCommas(tempTotal);

@@ -16,54 +16,71 @@
 
       <div class="section section-pricetool -exp-2 js-color -theme--light" data-color="light">
 
-        <div class="left-price-panel">
-          <div class="form-container">
-            <p>price</p>
-            <p>tool</p>
-            <div class="required-section">
-              <div class="input-container">
-                <div class="input-label">average sqft<span class="star"> *</span></div>
-                <input type="number" (change)="calcTotal()" [(ngModel)]="averagesqft" required>
-              </div>
-
-              <div class="input-container">
-                <div class="input-label">units<span class="star"> *</span></div>
-                <input type="number" (change)="calcTotal()" [(ngModel)]="units" required>
-              </div>
-
-
-              <div class="small-font" style="float: right;">
-                (<span class="star">*</span>required)
-              </div>
-            </div>
-            <div class="add-on-section">
-              <div>
-                <input type="checkbox" name="upload" [(ngModel)]="upload" (change)="calcTotal()"> upload tours to
-                Youtube
-                or Vimeo
-              </div>
-              <div>
-                <input type="checkbox" name="amenities" [(ngModel)]="amenities"> shoot amenities
-              </div>
-
-            </div>
-          </div>
-
+        <div class="price-tool-header">
+          <p>price</p>
+          <p>tool</p>
         </div>
-        <div class="right-price-panel">
-          <div class="total-container">
-            <div style="margin-bottom: 5px;">
-              total
-            </div>
-            <div class="xl-font">
-              {{totalPrice}}
-            </div>
-            <div class="small-font">
-              (rounded to the nearest dollar)
-            </div>
-          </div>
+        <div class="price-tool-container">
+          <div class="left-price-panel">
+            <div class="form-container">
+              <div class="required-section">
+                <div class="input-container">
+                  <div class="input-label">average sqft<span class="star"> *</span></div>
+                  <input type="number" (change)="calcTotal()" [(ngModel)]="averagesqft" required>
+                </div>
 
+                <div class="input-container">
+                  <div class="input-label">units<span class="star"> *</span></div>
+                  <input type="number" (change)="calcTotal()" [(ngModel)]="units" required>
+                </div>
+
+
+                <div class="small-font" style="float: right;">
+                  (<span class="star">*</span>required)
+                </div>
+              </div>
+              <div class="add-on-section">
+                <div class="add-on-checkbox-container">
+                  <input type="checkbox" name="upload" [(ngModel)]="upload" (change)="calcTotal()"> upload tours to
+                  Youtube
+                  or Vimeo
+                </div>
+                <div class="add-on-checkbox-container">
+                  <input type="checkbox" name="amenities" [(ngModel)]="amenities" (change)="calcTotal()"> shoot amenities
+                </div>
+
+                <div *ngIf="amenities" class="amenities-container">
+                  <div class="input-container">
+                    <div class="input-label">total sqft</div>
+                    <input type="number" (change)="calcTotal()" [(ngModel)]="totalAmenitySqft" required>
+                  </div>
+
+                  <div class="input-container">
+                    <div class="input-label">spaces</div>
+                    <input type="number" (change)="calcTotal()" [(ngModel)]="spaces" required>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="right-price-panel">
+            <div class="total-container">
+              <div style="margin-bottom: 5px;">
+                total
+              </div>
+              <div class="xl-font">
+                {{totalPrice}}
+              </div>
+              <div class="small-font">
+                (rounded to the nearest dollar)
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
 
     </div>

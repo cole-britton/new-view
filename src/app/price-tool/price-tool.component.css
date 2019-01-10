@@ -9,24 +9,22 @@ p {
 
 .left-price-panel{
     display: inline-block;
-    width: 65%;
     border-right: 2px solid;
     min-width: 400px;
 }
 
 .right-price-panel{
     display: inline-block;
-    width: 35%;
     min-width: 400px;
     vertical-align: top;
 }
 
 .required-section {
-    padding: 20px;
+    padding-bottom: 20px;
 }
 
 .add-on-section {
-    padding: 20px;
+    padding-top: 20px;
     border-top: 1px solid lightgray;
 }
 
@@ -67,4 +65,27 @@ input[type=number] {
 
 .input-label {
     padding-bottom: 4px;
+}
+
+.add-on-checkbox-container {
+    margin-bottom: 12px;
+}
+
+.amenities-container {
+    padding: 20px;
+    background: #f2f2f2;
+    border-radius: 2px;
+}
+
+.price-tool-container{
+    min-width: 400px;
+    max-width: 802px;
+    margin: auto;
+}
+
+.price-tool-header{
+    min-width: 400px;
+    max-width: 802px;
+    padding: 0 20px 20px 20px;
+    margin: auto;
 }

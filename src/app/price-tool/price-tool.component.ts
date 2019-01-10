@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-price-tool',
@@ -16,7 +17,11 @@ export class PriceToolComponent implements OnInit {
   amenities: boolean = false;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goHome(){
+    this.router.navigate(['']);
+  }
 
   calcTotal() {
     var tempTotal = 0;

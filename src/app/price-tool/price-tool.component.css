@@ -10,12 +10,12 @@ p {
 .left-price-panel{
     display: inline-block;
     border-right: 2px solid;
-    min-width: 400px;
+    min-width: 320px;
 }
 
 .right-price-panel{
     display: inline-block;
-    min-width: 400px;
+    min-width: 320px;
     vertical-align: top;
 }
 
@@ -29,7 +29,7 @@ p {
 }
 
 .form-container {
-    width: 400px;
+    width: 320px;
     float: right;
     padding: 20px;
 }
@@ -37,7 +37,7 @@ p {
 .total-container {
     padding: 20px;
     vertical-align: top;
-    width: 400px;
+    width: 320px;
 }
 
 .small-font{
@@ -78,14 +78,14 @@ input[type=number] {
 }
 
 .price-tool-container{
-    min-width: 400px;
-    max-width: 802px;
+    min-width: 320px;
+    max-width: 642px;
     margin: auto;
 }
 
 .price-tool-header{
-    min-width: 400px;
-    max-width: 802px;
+    min-width: 320px;
+    max-width: 642px;
     padding: 0 20px 20px 20px;
     margin: auto;
 }

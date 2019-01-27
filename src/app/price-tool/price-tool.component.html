@@ -25,8 +25,8 @@
             <div class="form-container">
               <div class="required-section">
                 <div class="input-container">
-                  <div class="input-label">average sqft<span class="star"> *</span></div>
-                  <input type="number" (change)="calcTotal()" [(ngModel)]="averagesqft" required>
+                  <div class="input-label">total sqft<span class="star"> *</span></div>
+                  <input type="number" (change)="calcTotal()" [(ngModel)]="totalSqft" required>
                 </div>
 
                 <div class="input-container">
@@ -42,11 +42,11 @@
               <div class="add-on-section">
                 <div class="add-on-checkbox-container">
                   <input type="checkbox" name="upload" [(ngModel)]="upload" (change)="calcTotal()"> upload tours to
-                  Youtube
-                  or Vimeo
+                  YouTube
                 </div>
                 <div class="add-on-checkbox-container">
-                  <input type="checkbox" name="amenities" [(ngModel)]="amenities" (change)="calcTotal()"> shoot amenities
+                  <input type="checkbox" name="amenities" [(ngModel)]="amenities" (change)="calcTotal()"> shoot
+                  amenities
                 </div>
 
                 <div *ngIf="amenities" class="amenities-container">
@@ -75,6 +75,14 @@
               </div>
               <div class="small-font">
                 (rounded to the nearest dollar)
+              </div>
+            </div>
+            <div *ngIf="presentPricePerUnit" class="total-container">
+              <div style="margin-bottom: 5px;">
+                price per unit
+              </div>
+              <div>
+                {{costPerUnit}}
               </div>
             </div>
 

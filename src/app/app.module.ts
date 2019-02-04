@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PriceToolComponent } from './price-tool/price-tool.component';
 import { HomeComponent } from './home/home.component';
+import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PriceToolComponent,
-    HomeComponent
+    HomeComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,

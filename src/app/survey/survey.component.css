@@ -1,0 +1,168 @@
+p {
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+}
+
+
+.survey-container{
+    min-width: 320px;
+    max-width: 642px;
+    margin: auto;
+}
+
+.survey-header{
+    min-width: 320px;
+    max-width: 642px;
+    margin: auto;
+}
+
+.apt-photo {
+    transition: transform .2s;
+    width: 40px;
+    margin: 0 auto;
+}
+
+.apt-photo:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+.apt-photo-wrapper{
+    display: inline-block;
+    margin: 5px;
+}
+
+.photos-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.presented-photo {
+    transition: transform .2s;
+}
+
+.presented-photo-wrapper {
+
+}
+
+.slider-labels-wrapper{
+    line-height: 12px;
+}
+
+.slider-label {
+    display: inline-block;
+    font-size: 10px;
+    text-align: center;
+    width: 33.3333%;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.-center-label {
+    border-left: 1px dashed #f2f2f2;
+    border-right: 1px dashed #f2f2f2;
+}
+
+.-full {
+    width: 100%;
+}
+
+.media-label {
+    margin: 50px 0 30px 0;
+}
+
+.video-wrapper {
+    text-align: center;
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.-pad-40 {
+    padding: 40px;
+}
+
+.-pad-20 {
+    padding: 20px;
+}
+
+.-q-container {
+    border-top: 1px solid #f2f2f2;
+    padding: 60px 0;
+    line-height: 25px;
+}
+
+.-q-body {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #f2f2f2;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: black;
+    cursor: pointer;
+  }
+
+  .submit-button-wrapper {
+    text-align: center;
+  }
+
+  .submit-button {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+  }
+
+  .submit-button:hover {
+    background-color: rgb(20, 20, 20); 
+    cursor: pointer;
+  }

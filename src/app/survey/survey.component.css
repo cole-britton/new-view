@@ -11,6 +11,15 @@ p {
     margin: auto;
 }
 
+.header-s{
+  height:160px;
+  left:0;
+  pointer-events:none;
+  top:0;
+  width:100%;
+  z-index:1001
+}
+
 .survey-header{
     min-width: 320px;
     max-width: 642px;
@@ -49,8 +58,25 @@ p {
 
 }
 
+.slider-input-wrapper {
+    padding: 0 3.5%;
+}
+
+.slider-numbers-wrapper{
+    line-height: 12px;
+    padding: 10px 0;
+}
+
+.slider-numbers-wrapper>div{
+    width: 9.0909%;
+    display: inline-block;
+    text-align: center;
+    font-size: 10px;
+}
+
 .slider-labels-wrapper{
     line-height: 12px;
+    padding: 16px 0;
 }
 
 .slider-label {
@@ -69,6 +95,12 @@ p {
 
 .-full {
     width: 100%;
+}
+
+.form-field {
+    margin: 20px auto;
+    width: 220px;
+    display: block;
 }
 
 .media-label {
@@ -129,16 +161,16 @@ p {
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: black;
     cursor: pointer;
   }
   
   .slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: black;
     cursor: pointer;
@@ -146,6 +178,7 @@ p {
 
   .submit-button-wrapper {
     text-align: center;
+    margin: 60px 0;
   }
 
   .submit-button {
@@ -165,4 +198,30 @@ p {
   .submit-button:hover {
     background-color: rgb(20, 20, 20); 
     cursor: pointer;
+  }
+
+  .stats-form>.form-field {
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .dropdown-option {
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .thank-you-message {
+    font-size: 14px;
+    text-align: center;
+    padding: 160px 20px;
+    line-height: 20px;
+  }
+
+  .show-complete {
+    opacity: 1 !important;
+  }
+
+  .step {
+    opacity: 0;
+    transition: 1s ease-in-out all;
   }

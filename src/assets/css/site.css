@@ -58,7 +58,6 @@ html{
     background-color:#fff;
     box-sizing:border-box;
     color:#000;
-    transition:background-color 400ms cubic-bezier(0.25, 0.1, 0.25, 1),color 400ms cubic-bezier(0.25, 0.1, 0.25, 1)
 }
 body{
     -webkit-font-smoothing:antialiased;
@@ -87,7 +86,8 @@ a{
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: auto;
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 
 *,*:before,*:after{
@@ -1464,7 +1464,7 @@ a{
 .is-touchable .header__keys{
     display:none !important
 }
-@media only screen and (max-width: 1680px){
+ @media only screen and (max-width: 1680px){
     .-wrap-index{
         padding-left:6vw;
         padding-right:6vw

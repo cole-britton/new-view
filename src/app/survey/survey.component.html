@@ -1,189 +1,235 @@
 <div id="siteContainer" class="site-container">
-  <header class="header js-header ghost -wrap -fzero">
-    <div class="ghost__child -full">
-      <div class="header__nav -column -column--2of4">
-      </div>
-      <div class="header__utility -column -column--2of4 -text--right">
-        <div class="header__icon -column nv-icon" (click)="goHome()">
-          <img width="150px" src="./assets/images/MASTER_logo.png" alt="">
-        </div>
+  <header class="header-s js-header ghost -wrap">
+    <div class="ghost__child -full -text--right">
+      <div class="header__icon -column nv-icon" (click)="goHome()">
+        <img width="150px" src="./assets/images/MASTER_logo.png" alt="">
       </div>
     </div>
   </header>
 
-  <div class="slices__slice slices__labeledSection">
-    <div class="slices__content">
+  <div *ngIf="!surveyComplete" class="section-survey -theme--light">
 
-      <div class="section section-survey -exp-2 js-color -theme--light" data-color="light">
+    <div class="survey-header -pad-20">
+      <p>survey</p>
+    </div>
+    <div class="survey-container">
 
-        <div class="survey-header -pad-20">
-          <p>survey</p>
-        </div>
-        <div class="survey-container">
-
-          <div class="media-display-wrapper -pad-20">
-            <div class="media-label">
-              First, look at these photos of this apartment:
-            </div>
-
-            <div class="photos-container">
-              <div class="presented-photo-wrapper -full">
-                <img class="presented-photo -full" src="{{presentedPhoto}}" alt="">
-              </div>
-              <div class="apt-photo-wrapper" *ngFor="let aptPhoto of apartmentPhotos">
-                <img on-mouseover='over(aptPhoto)' class="apt-photo" src="{{aptPhoto}}" alt="">
-              </div>
-            </div>
-          </div>
-
-          <div class="media-display-wrapper -pad-20" style="margin-bottom: 50px;">
-
-            <div class="media-label">
-              Now, watch this video of the same apartment:
-            </div>
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/nQM-LJuPooY?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="question-one -q-container">
-            <div class="-q-body -pad-20">
-              Let’s say you were a prospective resident searching for a new apartment. How helpful would this video
-              walkthrough be in making a decision to visit the property for a physical tour?
-            </div>
-
-            <div class="slider-wrapper -pad-20">
-              <input type="range" min="1" max="100" value="50" class="slider">
-              <div class="slider-labels-wrapper">
-                <div class="slider-label -left-label">
-                  These photos would be enough
-                </div>
-                <div class="slider-label -center-label">
-                  This video would help me decide
-                </div>
-                <div class="slider-label -right-label">
-                  This video increased my interested
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-two -q-container">
-            <div class="-q-body -pad-20">
-              Let’s say you were to call in to a leasing office and request a tour, and the agent you spoke with sent
-              you
-              10 videos of units that were applicable to your needs, how would you feel about needing to physically
-              tour
-              all 10 once you arrived to see the units in person?
-            </div>
-            <div class="slider-wrapper -pad-20">
-              <input type="range" min="1" max="100" value="50" class="slider">
-              <div class="slider-labels-wrapper">
-                <div class="slider-label -left-label">
-                  I would still want to see all 10 units
-                </div>
-                <div class="slider-label -center-label">
-                  I would only need to see 5 units
-                </div>
-                <div class="slider-label -right-label">
-                  I wouldn’t need to physically tour at all
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-three -q-container">
-            <div class="-q-body -pad-20">
-              Let’s say you’re moving to a new state, and won’t be able to take a physical tour of the properties
-              you’re
-              shopping online for. After finding four different communities that are all equally appealing, only two of
-              them provided video walkthroughs such as this one. How much more likely would you be to lease a unit with
-              video walkthroughs over a community with just photos?
-            </div>
-
-            <div class="slider-wrapper -pad-20">
-              <input type="range" min="1" max="100" value="50" class="slider">
-              <div class="slider-labels-wrapper">
-                <div class="slider-label -left-label">
-                  Video wouldn’t impact my decision
-                </div>
-                <div class="slider-label -center-label">
-                  Video would help make my decision
-                </div>
-                <div class="slider-label -right-label">
-                  I would only choose a unit w/ video
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-four -q-container">
-            <div class="-q-body -pad-20">
-              Let’s say you visit ten communities in search of a new home in one day. When you arrive back home, you
-              find
-              it challenging to remember the specific details of each and every building. Although all the buildings
-              you
-              visited have photos of their model unit available, only five of them have video walkthroughs of every
-              unit
-              you toured that day. How much more comfortable would you feel choosing to rent from one of the buildings
-              with walkthroughs over the buildings with just photos?
-            </div>
-
-            <div class="slider-wrapper -pad-20">
-              <input type="range" min="1" max="100" value="50" class="slider">
-              <div class="slider-labels-wrapper">
-                <div class="slider-label -left-label">
-                  Videos don’t help me feel comfortable
-                </div>
-                <div class="slider-label -center-label">
-                  Videos help me feel more comfortable
-                </div>
-                <div class="slider-label -right-label">
-                  I would only rent a unit with videos
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-five -q-container">
-            <div class="-q-body -pad-20">
-              Let’s say you visit two properties and tour both buildings. You see both model apartments, the amenities,
-              and common areas, but both units you’re interested in are still occupied by the current tenant and aren’t
-              available to tour. When you return to the leasing office, one agent shows you a video walkthrough of the
-              occupied unit, and the other just shows you a floor plan. If you liked both buildings equally, which unit
-              would you feel more comfortable applying for?
-            </div>
-
-            <div class="slider-wrapper -pad-20">
-              <input type="range" min="1" max="100" value="50" class="slider">
-              <div class="slider-labels-wrapper">
-                <div class="slider-label -left-label">
-                  I don’t need a video to help me decide
-                </div>
-                <div class="slider-label -center-label">
-                  The video would help me decide
-                </div>
-                <div class="slider-label -right-label">
-                  I would only choose the unit with the video
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-five -q-container">
-            <div class="-pad-20" style="text-align: center;">
-              Thank you for completeing the New View survey.
-            </div>
-
-            <div class="submit-button-wrapper -pad-20">
-              <button class="submit-button">submit survey</button>
-            </div>
-          </div>
+      <div class="media-display-wrapper -pad-20">
+        <div class="media-label">
+          First, look at these photos of this apartment:
         </div>
 
+        <div class="photos-container">
+          <div class="presented-photo-wrapper -full">
+            <img class="presented-photo -full" src="{{presentedPhoto}}" alt="">
+          </div>
+          <div class="apt-photo-wrapper" *ngFor="let aptPhoto of apartmentPhotos">
+            <img on-mouseover='over(aptPhoto)' class="apt-photo" src="{{aptPhoto}}" alt="">
+          </div>
+        </div>
       </div>
 
+      <div class="media-display-wrapper -pad-20" style="margin-bottom: 50px;">
+
+        <div class="media-label">
+          Now, watch this video of the same apartment:
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/nQM-LJuPooY?rel=0&amp;showinfo=0" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="question-one -q-container">
+        <div class="-q-body -pad-20">
+          Let’s say you were a prospective resident searching for a new apartment. How helpful would this video
+          walkthrough be in making a decision to visit the property for a physical tour?
+        </div>
+
+        <div class="slider-wrapper -pad-20">
+          <div class="slider-numbers-wrapper">
+            <div *ngFor="let number of toTen">{{number}}</div>
+          </div>
+          <div class="slider-input-wrapper">
+            <input type="range" min="1" max="100" [(ngModel)]="surveyPackage.answers[0]" class="slider">
+          </div>
+          <div class="slider-labels-wrapper">
+            <div class="slider-label -left-label">
+              These photos would be enough
+            </div>
+            <div class="slider-label -center-label">
+              This video would help me decide
+            </div>
+            <div class="slider-label -right-label">
+              This video increased my interested
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-two -q-container">
+        <div class="-q-body -pad-20">
+          Let’s say you were to call in to a leasing office and request a tour, and the agent you spoke with sent
+          you
+          10 videos of units that were applicable to your needs. How would you feel about needing to physically
+          tour
+          all 10 once you arrived to see the units in person?
+        </div>
+        <div class="slider-wrapper -pad-20">
+          <div class="slider-numbers-wrapper">
+            <div *ngFor="let number of toTen">{{number}}</div>
+          </div>
+          <div class="slider-input-wrapper">
+            <input type="range" min="1" max="100" [(ngModel)]="surveyPackage.answers[1]" class="slider">
+          </div>
+          <div class="slider-labels-wrapper">
+            <div class="slider-label -left-label">
+              I would still want to see all 10 units
+            </div>
+            <div class="slider-label -center-label">
+              I would only need to see 5 units
+            </div>
+            <div class="slider-label -right-label">
+              I wouldn’t need to physically tour at all
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-three -q-container">
+        <div class="-q-body -pad-20">
+          Let’s say you’re moving to a new state, and won’t be able to take a physical tour of the properties
+          you’re
+          shopping online for. After finding four different communities that are all equally appealing, only two of
+          them provided video walkthroughs such as this one. How much more likely would you be to lease a unit with
+          video walkthroughs over a community with just photos?
+        </div>
+
+        <div class="slider-wrapper -pad-20">
+          <div class="slider-numbers-wrapper">
+            <div *ngFor="let number of toTen">{{number}}</div>
+          </div>
+          <div class="slider-input-wrapper">
+            <input type="range" min="1" max="100" [(ngModel)]="surveyPackage.answers[2]" class="slider">
+          </div>
+          <div class="slider-labels-wrapper">
+            <div class="slider-label -left-label">
+              Video wouldn’t impact my decision
+            </div>
+            <div class="slider-label -center-label">
+              Video would help make my decision
+            </div>
+            <div class="slider-label -right-label">
+              I would only choose a unit w/ video
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-four -q-container">
+        <div class="-q-body -pad-20">
+          Let’s say you visit ten communities in search of a new home in one day. When you arrive back home, you
+          find
+          it challenging to remember the specific details of each and every building. Although all the buildings
+          you
+          visited have photos of their model unit available, only five of them have video walkthroughs of every
+          unit
+          you toured that day. How much more comfortable would you feel choosing to rent from one of the buildings
+          with walkthroughs over the buildings with just photos?
+        </div>
+
+        <div class="slider-wrapper -pad-20">
+          <div class="slider-numbers-wrapper">
+            <div *ngFor="let number of toTen">{{number}}</div>
+          </div>
+          <div class="slider-input-wrapper">
+            <input type="range" min="1" max="100" [(ngModel)]="surveyPackage.answers[3]" class="slider">
+          </div>
+          <div class="slider-labels-wrapper">
+            <div class="slider-label -left-label">
+              Videos don’t help me feel comfortable
+            </div>
+            <div class="slider-label -center-label">
+              Videos help me feel more comfortable
+            </div>
+            <div class="slider-label -right-label">
+              I would only rent a unit with videos
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-five -q-container">
+        <div class="-q-body -pad-20">
+          Let’s say you visit two properties and tour both buildings. You see both model apartments, the amenities,
+          and common areas, but both units you’re interested in are still occupied by the current tenant and aren’t
+          available to tour. When you return to the leasing office, one agent shows you a video walkthrough of the
+          occupied unit, and the other just shows you a floor plan. If you liked both buildings equally, which unit
+          would you feel more comfortable applying for?
+        </div>
+
+        <div class="slider-wrapper -pad-20">
+          <div class="slider-numbers-wrapper">
+            <div *ngFor="let number of toTen">{{number}}</div>
+          </div>
+          <div class="slider-input-wrapper">
+            <input type="range" min="1" max="100" [(ngModel)]="surveyPackage.answers[4]" class="slider">
+          </div>
+          <div class="slider-labels-wrapper">
+            <div class="slider-label -left-label">
+              I don’t need a video to help me decide
+            </div>
+            <div class="slider-label -center-label">
+              The video would help me decide
+            </div>
+            <div class="slider-label -right-label">
+              I would only choose the unit with the video
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats -q-container">
+        <form>
+          <mat-form-field class="form-field -full">
+            <mat-select placeholder="your current age" [formControl]="ageControl" required>
+              <mat-option class="dropdown-option" *ngFor="let age of ages" [value]="age">
+                {{age}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="ageControl.hasError('required')">please choose an age range</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-field -full">
+            <mat-select placeholder="your rent/mortgage" [formControl]="rentControl" required>
+              <mat-option class="dropdown-option" *ngFor="let rent of rents" [value]="rent">
+                {{rent}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="rentControl.hasError('required')">please choose a rent/mortgage range</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="form-field -full">
+            <input matInput placeholder="your zip code" pattern="[0-9]*" [formControl]="zipControl">
+            <mat-error *ngIf="zipControl.hasError('required')">please enter your zip code</mat-error>
+          </mat-form-field>
+
+          <div class="submit-button-wrapper">
+            <button mat-button type="submit" class="submit-button" (click)="submitClicked()">submit survey</button>
+          </div>
+        </form>
+      </div>
     </div>
+
   </div>
 
+  <div [class.show-complete]="surveyComplete" class="step">
+    <div class="thank-you-message">
+      <div>
+        Thank you for taking the New View survey.
+      </div>
+      <div style="font-size:10px;">
+        Now tell all your friends about it.
+      </div>
+    </div>
+  </div>
 </div>

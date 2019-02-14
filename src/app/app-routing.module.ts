@@ -7,6 +7,7 @@ import { SurveyComponent } from './survey/survey.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'survey', component: SurveyComponent },
+  { path: 'pricingtool', component: PriceToolComponent },
   { path: 'pricetool', component: PriceToolComponent },
   { path: '**', component: HomeComponent }];
 

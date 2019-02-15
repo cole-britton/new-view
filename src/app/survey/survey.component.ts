@@ -23,12 +23,18 @@ export class SurveyComponent implements OnInit {
     zipcode: ""
   }
 
+  q1 = "Let’s say you were a prospective resident searching for a new apartment. How helpful would this video walkthrough be in making a decision to visit the property for a physical tour?";
+  q2 = "Let’s say you were to call in to a leasing office and request a tour, and the agent you spoke with sent you 10 videos of units that were applicable to your needs. How would you feel about needing to physically tour all 10 once you arrived to see the units in person?";
+  q3 = "Let's say you visit ten communities in search of a new home in one day. Upon returning home, staff from five of the properties send you photos and floorplans, and the other five send video walkthroughs such as this one. How helpful would it be to have the videos as a reference over just photos?";
+  q4 = "Let's say you visit two properties and tour both buildings. You're able to see a model apartment, but the actual unit you're interested in is still occupied. When you return to the leasing office, one agent shows you a video walkthrough of the occupied unit, and the other shows you a floor plan. If you liked both buildings equally, which unit would you feel more comfortable applying for?";
+  q5 = "Let’s say you visit two properties and tour both buildings. You see both model apartments, the amenities, and common areas, but both units you’re interested in are still occupied by the current tenant and aren’t available to tour. When you return to the leasing office, one agent shows you a video walkthrough of the occupied unit, and the other just shows you a floor plan. If you liked both buildings equally, which unit would you feel more comfortable applying for?";
+
   ageControl = new FormControl('', [Validators.required]);
   rentControl = new FormControl('', [Validators.required]);
   zipControl = new FormControl('', [Validators.required]);
 
   ages: string[] = ["18-24", "25-34", "35-44", "45+"];
-  rents: string[] = ["$1000-$1499", "$1500-$1999", "$2000-$2499", "$2500+"];
+  rents: string[] = ["less than $1000", "$1000-$1499", "$1500-$1999", "$2000-$2499", "$2500+"];
 
   constructor(private router: Router, private db: AngularFireDatabase) { }
 
@@ -57,6 +63,29 @@ export class SurveyComponent implements OnInit {
     this.presentedPhoto = imagePath;
   }
 
+  presentNextPhoto() {
+    let currentIndex = parseInt(this.getCurrentPhoto().join(''));
+    let newIndex = currentIndex + 1;
+    if(currentIndex === 11){
+      newIndex = 1;
+    } 
+    this.presentedPhoto = "./assets/images/almr-" + newIndex + ".jpg";
+  }
+
+  presentPreviousPhoto() {
+    let currentIndex = parseInt(this.getCurrentPhoto().join(''));
+    let newIndex = currentIndex - 1;
+    if(currentIndex === 1){
+      newIndex = 11;
+    } 
+    this.presentedPhoto = "./assets/images/almr-" + newIndex + ".jpg";
+  }
+
+  getCurrentPhoto() {
+    var numberPattern = /\d+/g;
+    return this.presentedPhoto.match(numberPattern);
+  }
+
   submitClicked() {
     this.surveyPackage.age = this.ageControl.value;
     this.surveyPackage.rent = this.rentControl.value;
@@ -66,7 +95,7 @@ export class SurveyComponent implements OnInit {
     }
   }
 
-  submitSurvey(){
+  submitSurvey() {
     this.surveyComplete = true;
     this.db.list('completedSurveys').push(this.surveyPackage)
       .then(_ => {

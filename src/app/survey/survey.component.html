@@ -21,6 +21,10 @@
 
         <div class="photos-container">
           <div class="presented-photo-wrapper -full">
+            <div class="photo-left" (click)="presentPreviousPhoto()">
+            </div>
+            <div class="photo-right" (click)="presentNextPhoto()">
+            </div>
             <img class="presented-photo -full" src="{{presentedPhoto}}" alt="">
           </div>
           <div class="apt-photo-wrapper" *ngFor="let aptPhoto of apartmentPhotos">
@@ -41,8 +45,7 @@
       </div>
       <div class="question-one -q-container">
         <div class="-q-body -pad-20">
-          Let’s say you were a prospective resident searching for a new apartment. How helpful would this video
-          walkthrough be in making a decision to visit the property for a physical tour?
+          {{q1}}
         </div>
 
         <div class="slider-wrapper -pad-20">
@@ -60,7 +63,7 @@
               This video would help me decide
             </div>
             <div class="slider-label -right-label">
-              This video increased my interested
+              This video increased my interest
             </div>
           </div>
         </div>
@@ -68,11 +71,7 @@
 
       <div class="question-two -q-container">
         <div class="-q-body -pad-20">
-          Let’s say you were to call in to a leasing office and request a tour, and the agent you spoke with sent
-          you
-          10 videos of units that were applicable to your needs. How would you feel about needing to physically
-          tour
-          all 10 once you arrived to see the units in person?
+          {{q2}}
         </div>
         <div class="slider-wrapper -pad-20">
           <div class="slider-numbers-wrapper">
@@ -97,11 +96,7 @@
 
       <div class="question-three -q-container">
         <div class="-q-body -pad-20">
-          Let’s say you’re moving to a new state, and won’t be able to take a physical tour of the properties
-          you’re
-          shopping online for. After finding four different communities that are all equally appealing, only two of
-          them provided video walkthroughs such as this one. How much more likely would you be to lease a unit with
-          video walkthroughs over a community with just photos?
+          {{q3}}
         </div>
 
         <div class="slider-wrapper -pad-20">
@@ -113,13 +108,13 @@
           </div>
           <div class="slider-labels-wrapper">
             <div class="slider-label -left-label">
-              Video wouldn’t impact my decision
+              Photos would be just fine
             </div>
             <div class="slider-label -center-label">
-              Video would help make my decision
+              I would appreciate the videos
             </div>
             <div class="slider-label -right-label">
-              I would only choose a unit w/ video
+              I would only rent a unit w/ videos
             </div>
           </div>
         </div>
@@ -127,14 +122,7 @@
 
       <div class="question-four -q-container">
         <div class="-q-body -pad-20">
-          Let’s say you visit ten communities in search of a new home in one day. When you arrive back home, you
-          find
-          it challenging to remember the specific details of each and every building. Although all the buildings
-          you
-          visited have photos of their model unit available, only five of them have video walkthroughs of every
-          unit
-          you toured that day. How much more comfortable would you feel choosing to rent from one of the buildings
-          with walkthroughs over the buildings with just photos?
+          {{q4}}
         </div>
 
         <div class="slider-wrapper -pad-20">
@@ -160,11 +148,7 @@
 
       <div class="question-five -q-container">
         <div class="-q-body -pad-20">
-          Let’s say you visit two properties and tour both buildings. You see both model apartments, the amenities,
-          and common areas, but both units you’re interested in are still occupied by the current tenant and aren’t
-          available to tour. When you return to the leasing office, one agent shows you a video walkthrough of the
-          occupied unit, and the other just shows you a floor plan. If you liked both buildings equally, which unit
-          would you feel more comfortable applying for?
+          {{q5}}
         </div>
 
         <div class="slider-wrapper -pad-20">

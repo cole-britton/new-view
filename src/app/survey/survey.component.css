@@ -55,7 +55,24 @@ p {
 }
 
 .presented-photo-wrapper {
+  position: relative;
+}
 
+.photo-left {
+  width: 50%;
+  background: transparent;
+  height: 100%;
+  position: absolute;
+  z-index: 100000;
+}
+
+.photo-right {
+  width: 50%;
+  background: transparent;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 100000;
 }
 
 .slider-input-wrapper {

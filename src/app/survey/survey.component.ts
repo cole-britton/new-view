@@ -23,11 +23,11 @@ export class SurveyComponent implements OnInit {
     zipcode: ""
   }
 
-  q1 = "Let’s say you were a prospective resident searching for a new apartment. How helpful would this video walkthrough be in making a decision to visit the property for a physical tour?";
-  q2 = "Let’s say you were to call in to a leasing office and request a tour, and the agent you spoke with sent you 10 videos of units that were applicable to your needs. How would you feel about needing to physically tour all 10 once you arrived to see the units in person?";
-  q3 = "Let's say you visit ten communities in search of a new home in one day. Upon returning home, staff from five of the properties send you photos and floorplans, and the other five send video walkthroughs such as this one. How helpful would it be to have the videos as a reference over just photos?";
-  q4 = "Let’s say you’re moving to a new state, and won’t be able to take a physical tour of the properties you’re shopping online for. After finding four different communities that are all equally appealing, only two of them provided video walkthroughs such as this one. How much more likely would you be to lease a unit with video walkthroughs over a community with just photos?"
-  q5 = "Let's say you visit two properties and tour both buildings. You're able to see a model apartment, but the actual unit you're interested in is still occupied. When you return to the leasing office, one agent shows you a video walkthrough of the occupied unit, and the other shows you a floor plan. If you liked both buildings equally, which unit would you feel more comfortable applying for?";
+  q1 = "Assume you are searching for a new apartment. How helpful would this video walkthrough be in making a decision to visit the property for a tour?";
+  q2 = "If you were to call a leasing office requesting a tour, and the agent you spoke with sent you 10 videos of units that fit your needs, how would you feel about needing to see all 10 units on your tour?";
+  q3 = "After a long day of apartment hunting, you return home to find follow ups from various leasing agents. Some sent floor plans, and others sent videos such as this one. How helpful would the videos be as a reference over the floor plans?";
+  q4 = "Assume you’re moving to a new state with no way to tour the properties you’re shopping online for. If there were four properties you were equally interested in, but only two had videos, how much more likely would you be to lease one with videos over one with just photos?";
+  q5 = "After touring two buildings and seeing both model units, you discover the homes you’re interested in are both still occupied. One leasing agent has a floor plan, and the other has a video walkthrough. If you liked each building equally, which would you feel more comfortable applying for?";
 
   ageControl = new FormControl('', [Validators.required]);
   rentControl = new FormControl('', [Validators.required]);

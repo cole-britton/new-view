@@ -13,13 +13,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PriceToolComponent,
     HomeComponent,
-    SurveyComponent
+    SurveyComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

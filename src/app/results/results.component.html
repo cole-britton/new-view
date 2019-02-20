@@ -1,0 +1,211 @@
+<div id="siteContainer" class="site-container">
+  <header class="header-s js-header ghost -wrap">
+    <div class="ghost__child -full -text--right">
+      <div class="header__icon -column nv-icon" (click)="goHome()">
+        <img width="150px" src="./assets/images/MASTER_logo.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <div class="section-results -theme--light">
+
+    <div class="results-body -pad-20">
+      <p>survey results</p>
+      <div class="completed-total-wrapper -margin-40-v">
+        <div style="margin-bottom: 5px;">
+          completed surveys
+        </div>
+        <div class="xl-font">
+          {{results.length}}
+        </div>
+      </div>
+      <div class="-margin-40-v">
+        <div class="bar-data-wrapper">
+          age breakdown
+          <div *ngFor="let a of ageLabels" class="bar">
+            <div class="bar-label">
+              {{a}}
+            </div>
+            <div class="bar-value-wrapper">
+              <div class="bar-value" [ngStyle]="{'width': getBar(result.ageDict[a])}">
+              </div>
+              <div class="bar-digits">
+                {{result.ageDict[a]}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bar-data-wrapper">
+          rent breakdown
+          <div *ngFor="let r of rentLabels" class="bar">
+            <div class="bar-label">
+              {{r}}
+            </div>
+            <div class="bar-value-wrapper">
+              <div class="bar-value" [ngStyle]="{'width': getBar(result.rentDict[r])}">
+              </div>
+              <div class="bar-digits">
+                {{result.rentDict[r]}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-one -q-container">
+          <div class="-pad-20 -grey -font-12">
+            1/5
+          </div>
+          <div class="-q-body -pad-20">
+            {{q1}}
+          </div>
+
+          <div class="slider-wrapper -pad-20">
+
+            <div class="slider-input-wrapper">
+              <div [style.padding-left]="getIndent(result.answersDict['1'])">
+                {{getAnswerAverage(result.answersDict['1'])}}
+              </div>
+              <input disabled type="range" min="1" max="100" [(ngModel)]="result.answersDict['1']" class="slider">
+            </div>
+            <div class="slider-labels-wrapper">
+              <div class="slider-label -left-label">
+                These photos would be enough
+              </div>
+              <div class="slider-label -center-label">
+                This video would help me decide
+              </div>
+              <div class="slider-label -right-label">
+                This video increased my interest
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-two -q-container">
+          <div class="-pad-20 -grey -font-12">
+            2/5
+          </div>
+          <div class="-q-body -pad-20">
+            {{q2}}
+          </div>
+          <div class="slider-wrapper -pad-20">
+
+            <div class="slider-input-wrapper">
+              <div [style.padding-left]="getIndent(result.answersDict['2'])">
+                {{getAnswerAverage(result.answersDict['2'])}}
+              </div>
+              <input disabled type="range" min="1" max="100" [(ngModel)]="result.answersDict['2']" class="slider">
+            </div>
+            <div class="slider-labels-wrapper">
+              <div class="slider-label -left-label">
+                I would still want to see all 10 units
+              </div>
+              <div class="slider-label -center-label">
+                I would only need to see 5 units
+              </div>
+              <div class="slider-label -right-label">
+                I wouldn’t need to physically tour at all
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-three -q-container">
+          <div class="-pad-20 -grey -font-12">
+            3/5
+          </div>
+          <div class="-q-body -pad-20">
+            {{q3}}
+          </div>
+
+          <div class="slider-wrapper -pad-20">
+
+            <div class="slider-input-wrapper">
+              <div [style.padding-left]="getIndent(result.answersDict['3'])">
+                {{getAnswerAverage(result.answersDict['3'])}}
+              </div>
+              <input disabled type="range" min="1" max="100" [(ngModel)]="result.answersDict['3']" class="slider">
+            </div>
+            <div class="slider-labels-wrapper">
+              <div class="slider-label -left-label">
+                Photos would be just fine
+              </div>
+              <div class="slider-label -center-label">
+                I would appreciate the videos
+              </div>
+              <div class="slider-label -right-label">
+                I would only rent a unit w/ videos
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-four -q-container">
+          <div class="-pad-20 -grey -font-12">
+            4/5
+          </div>
+          <div class="-q-body -pad-20">
+            {{q4}}
+          </div>
+
+          <div class="slider-wrapper -pad-20">
+
+            <div class="slider-input-wrapper">
+              <div [style.padding-left]="getIndent(result.answersDict['4'])">
+                {{getAnswerAverage(result.answersDict['4'])}}
+              </div>
+              <input disabled type="range" min="1" max="100" [(ngModel)]="result.answersDict['4']" class="slider">
+            </div>
+            <div class="slider-labels-wrapper">
+              <div class="slider-label -left-label">
+                I don’t need a video to help me decide
+              </div>
+              <div class="slider-label -center-label">
+                The video would help me decide
+              </div>
+              <div class="slider-label -right-label">
+                I would only choose a unit with a video
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-five -q-container">
+          <div class="-pad-20 -grey -font-12">
+            5/5
+          </div>
+          <div class="-q-body -pad-20">
+            {{q5}}
+          </div>
+
+          <div class="slider-wrapper -pad-20">
+
+            <div class="slider-input-wrapper">
+              <div [style.padding-left]="getIndent(result.answersDict['5'])">
+                {{getAnswerAverage(result.answersDict['5'])}}
+              </div>
+              <input disabled type="range" min="1" max="100" [(ngModel)]="result.answersDict['5']" class="slider">
+            </div>
+            <div class="slider-labels-wrapper">
+              <div class="slider-label -left-label">
+                Videos don’t help me feel comfortable
+              </div>
+              <div class="slider-label -center-label">
+                Videos help me feel more comfortable
+              </div>
+              <div class="slider-label -right-label">
+                I would only rent a unit with a video
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

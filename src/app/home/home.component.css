@@ -61,6 +61,45 @@
     text-align: center;
   }
 
+  .-lulo{
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+  }
+
+  .small-button {
+    background-color: black; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 8px;
+  }
+
+  .small-button:hover {
+    background-color: rgb(20, 20, 20); 
+    cursor: pointer;
+  }
+
+  .package-select-button {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+  }
+
+  .package-select-button:hover {
+    background-color: rgb(20, 20, 20); 
+    cursor: pointer;
+  }
+
   @media only screen and (max-width: 1680px){
     .-wrap-index{
         padding-left:6vw;

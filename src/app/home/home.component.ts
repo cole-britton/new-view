@@ -31,4 +31,8 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/pricetool');
   }
 
+  packageSelected(id: number){
+    this.router.navigate(['/packagebuilder/', id]);
+  }
+
 }

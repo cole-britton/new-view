@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { Result } from './result';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   results: ISurvey[] = [];
@@ -37,12 +37,17 @@ export class ResultsComponent implements OnInit {
     });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe;
+  }
+
   goHome() {
     this.router.navigate(['']);
   }
 
   formatDataForDisplay() {
     if (this.results.length > 0) {
+      this.result = new Result();
       this.results.forEach(r => {
         for (var i = 0; i < 5; i++) {
           this.result.answersDict["" + (i + 1)] += r.answers[i];

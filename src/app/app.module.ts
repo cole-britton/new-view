@@ -8,12 +8,13 @@ import { PriceToolComponent } from './price-tool/price-tool.component';
 import { HomeComponent } from './home/home.component';
 import { SurveyComponent } from './survey/survey.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { ResultsComponent } from './results/results.component';
+import { PackageBuilderComponent } from './package-builder/package-builder.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ResultsComponent } from './results/results.component';
     PriceToolComponent,
     HomeComponent,
     SurveyComponent,
-    ResultsComponent
+    ResultsComponent,
+    PackageBuilderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { ResultsComponent } from './results/results.component';
     MatCheckboxModule,
     MatSelectModule,
     MatInputModule,
+    MatCardModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule

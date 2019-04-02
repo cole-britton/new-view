@@ -2,17 +2,6 @@
   <div class="cover-photo-container">
     <img class="cover-photo" src="./assets/images/cover-photo.png" alt="">
   </div>
-  <header class="header js-header ghost -wrap -fzero">
-    <div class="ghost__child -full">
-      <div class="header__nav -column -column--2of4">
-      </div>
-      <div class="header__utility -column -column--2of4 -text--right">
-        <div class="header__icon -column">
-          <img width="150px" src="./assets/images/MASTER_logo.png" alt="">
-        </div>
-      </div>
-    </div>
-  </header>
 
   <div class="slices__slice slices__labeledSection">
     <div class="cover-text -lulo xl-font">
@@ -59,9 +48,16 @@
 
   <div class="meat -wrap -full">
     <div class="package-builder-start-container">
-      <div>
-        Build your New View package
+      <div class="package-builder-header">
+        <div class="-lulo small-font">
+          Build your New View package
+        </div>
+        <div class="small-font -grey">
+          Start with a package currated by us to fit a specific need, or start from scratch and completely customize
+          your package.
+        </div>
       </div>
+
 
       <div class="flex-card-container">
         <div class="nv-card">
@@ -70,43 +66,9 @@
           </div>
           <img class="nv-card-image" src="./assets/images/101_Fairmount_small.gif" alt="Fairmount">
           <div class="nv-card-bullets">
-            <ul>
-              <li>
-                Building promo video
-              </li>
-              <li>
-                Model shot
-              </li>
-              <li>
-                5 videos optimized for social
-              </li>
-              <li>
-                Youtube channel creation and posting
-              </li>
-            </ul>
-          </div>
-          <div class="nv-card-actions">
-            <button mat-button class="small-button -lulo" (click)="packageSelected(2)">start here</button>
-          </div>
-        </div>
-        <div class="nv-card">
-          <div class="nv-card-header -lulo -font-12">
-            The Works
-          </div>
-          <img class="nv-card-image" src="./assets/images/803_slate_small.gif" alt="Fairmount">
-          <div class="nv-card-bullets">
-            <ul>
-              <li>
-                Building promo video
-              </li>
-              <li>
-                Model shot + all units
-              </li>
-              <li>
-                5 videos optimized for social
-              </li>
-              <li>
-                Youtube channel creation and posting
+            <ul class="feature-list">
+              <li *ngFor="let feature of packageOne">
+                {{feature}}
               </li>
             </ul>
           </div>
@@ -116,22 +78,29 @@
         </div>
         <div class="nv-card">
           <div class="nv-card-header -lulo -font-12">
+            The Works
+          </div>
+          <img class="nv-card-image" src="./assets/images/803_slate_small.gif" alt="Fairmount">
+          <div class="nv-card-bullets">
+            <ul class="feature-list">
+              <li *ngFor="let feature of packageTwo">
+                {{feature}}
+              </li>
+            </ul>
+          </div>
+          <div class="nv-card-actions">
+            <button mat-button class="small-button -lulo" (click)="packageSelected(2)">start here</button>
+          </div>
+        </div>
+        <div class="nv-card">
+          <div class="nv-card-header -lulo -font-12">
             Leasing Tool
           </div>
           <img class="nv-card-image" src="./assets/images/314_sunnyside_small.gif" alt="Fairmount">
           <div class="nv-card-bullets">
-            <ul>
-              <li>
-                Building promo video
-              </li>
-              <li>
-                Shoot all units
-              </li>
-              <li>
-                5 videos optimized for social
-              </li>
-              <li>
-                Youtube channel creation and posting
+            <ul class="feature-list">
+              <li *ngFor="let feature of packageThree">
+                {{feature}}
               </li>
             </ul>
           </div>

@@ -48,6 +48,7 @@ q:before,q:after,blockquote:before,blockquote:after{
     content:"";
     content:none
 }
+
 a img{
     border:none
 }
@@ -68,6 +69,112 @@ body{
     font-stretch:normal;
     font-style:normal
 }
+
+.app-nav-bar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    height: 48px;
+    max-height: 44px;
+    background: rgba(256, 256, 256, 0.9);
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.app-nav-content{
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.app-nav-header {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    overflow: hidden;
+    list-style: none;
+}
+
+.app-nav-item {
+    height: 48px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.app-nav-new-view {
+    position: absolute;
+    width: 48px;
+    top: 0;
+    left: 50%;
+    margin-left: -24px;
+    text-align: center;
+    z-index: 1;
+}
+
+.app-nav-link {
+    line-height: 2.82353em;
+    height: 48px;
+    font-size: 14px;
+    line-height: 3.14286;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0 10px;
+    height: 44px;
+    opacity: 1;
+    background: no-repeat;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-tap-highlight-color: transparent;
+    outline-offset: -7px;
+}
+
+.app-nav-link-new-view {
+    background-size: 55px 22px;
+    background-repeat: no-repeat;
+    background-image: url(../../assets/images/MASTER_logo.png);
+    background-position: center center;
+    width: 55px;
+}
+
+.app-nav-link-text{
+    display: none;
+}
+
+.feature-list>li{
+    margin-bottom: 10px;
+}
+
+.feature-list>li:last-child{
+    margin: 0;
+}
+
 
 .package-select-button-wrapper {
     text-align: center;
@@ -92,6 +199,15 @@ body{
     background-color: rgb(20, 20, 20); 
     cursor: pointer;
   }
+
+  .package-builder-header{
+      
+  }
+
+.package-builder-header>div{
+    text-align: center;
+    margin-bottom: 10px;
+}
 
   .small-button {
     background-color: black; 
@@ -125,9 +241,11 @@ body{
 .cover-photo-container {
     position: absolute;
     width: 100%;
+    height: 80vh;
     top: 0;
     left: 0;
     z-index: -100;
+    overflow: hidden;
 }
 
 .cover-photo{
@@ -141,7 +259,37 @@ body{
 .cover-text {
     text-align: center;
     color: white;
-    padding: 50vh 0;
+    margin: 40vh 20px;
+}
+
+.nv-actions-bar{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+    display: block;
+    margin: 0;
+    width: 100%;
+    min-width: 320px;
+    height: 48px;
+    background: rgba(256, 256, 256, 0.9);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+.nv-actions-content {
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
 }
 
 .small-font{
@@ -178,7 +326,7 @@ body{
 }
 
 .package-builder-start-container {
-    padding: 200px 0;
+    padding-bottom: 200px;
 }
 
 .nv-card{
@@ -204,12 +352,18 @@ body{
 }
 
 .nv-card-bullets{
-    margin: 0;
+        display: block;
+        position: relative;
+        margin-bottom: 78px
 }
 
 .nv-card-actions{
     text-align: center;
     padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 -16px 16px -16px;
 }
 
 a:hover {
@@ -2007,6 +2161,12 @@ a{
 
     .package-builder-start-container {
         padding: 40px 0;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .xl-font {
+        font-size: 32px;
     }
 }
  

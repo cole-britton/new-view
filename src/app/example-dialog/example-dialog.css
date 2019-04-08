@@ -1,0 +1,11 @@
+.dialog-title{
+    font-weight: bold;
+}
+
+.dialog-content {
+    line-height: 18px;
+}
+
+.dialog-actions>div {
+    float: right;
+}

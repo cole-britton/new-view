@@ -14,14 +14,12 @@
     padding-top: 20px;
 }
 
-.unit-gif-container{
-    display: inline-block;
-    width: 300px;
-    margin: 10px 20px;
+
+.-section-header-font-size{
+    font-size: 24px;
 }
 
 .section-gifs{
-    margin: 6vw;
     text-align: center;
 }
 

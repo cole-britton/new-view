@@ -17,3 +17,27 @@
     background-color: rgb(20, 20, 20); 
     cursor: pointer;
   }
+
+  .small-action-button {
+    background-color: #0070c9; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 6px;
+    height: 32px;
+  }
+
+  .small-action-button:hover {
+    background-color: #0063b4; 
+  }
+
+  .small-action-button-active {
+    border: none;
+    color: rgb(64, 182, 83); ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 6px;
+    height: 32px;
+  }
+

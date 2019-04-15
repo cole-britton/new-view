@@ -8,8 +8,14 @@ import { Route, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'new-view';
+  showMenu = false;
   constructor(private router: Router) {
 
+  }
+
+  goTo(route: string) {
+    this.showMenu = false;
+    this.router.navigateByUrl('/' + route);
   }
 
 }

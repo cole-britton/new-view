@@ -1,13 +1,35 @@
- <div class="app-nav-bar">
-  <div class="app-nav-content">
-    <ul class="app-nav-header">
-			<li class="app-nav-item app-nav-new-view">
-				<a class="app-nav-link app-nav-link-new-view" href="/" data-analytics-title="new view home" id="app-nav-firstfocus-small">
-					<span class="app-nav-link-text">New View</span>
-				</a>
-			</li>
-		</ul>
-  </div>
- </div>
- <router-outlet>
-  </router-outlet>
+<div class="app-nav-bar">
+	<div class="app-nav-content">
+		<div class="left">
+			<mat-icon *ngIf="!showMenu" (click)="showMenu = !showMenu" class="menu-nav-link">menu</mat-icon>
+			<mat-icon *ngIf="showMenu" (click)="showMenu = !showMenu" class="menu-nav-link">clear</mat-icon>
+		</div>
+		<div class="center">
+			<a class="app-nav-link app-nav-link-new-view" href="/" data-analytics-title="new view home"
+				id="app-nav-firstfocus-small">
+				<span class="app-nav-link-text">New View</span>
+			</a>
+		</div>
+		<div class="right">
+		</div>
+
+		<div *ngIf="showMenu" class="main-menu -main-menu-width">
+			<ul>
+				<li (click)="goTo('aboutus')">
+					About us
+				</li>
+				<li>
+					Projects
+				</li>
+				<li>
+					Build your project
+				</li>
+				<li>
+					Contact
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<router-outlet>
+</router-outlet>

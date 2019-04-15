@@ -4,7 +4,8 @@ import { PriceToolComponent } from './price-tool/price-tool.component';
 import { HomeComponent } from './home/home.component';
 import { SurveyComponent } from './survey/survey.component';
 import { ResultsComponent } from './results/results.component';
-import { PackageBuilderComponent } from './package-builder/package-builder.component';
+import { ProjectBuilderComponent } from './project-builder/project-builder.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'pricingtool', component: PriceToolComponent },
   { path: 'pricetool', component: PriceToolComponent },
-  { path: 'packagebuilder/:id', component: PackageBuilderComponent },
+  { path: 'projectbuilder/:id', component: ProjectBuilderComponent },
+  { path: 'aboutus', component: AboutUsComponent },
   { path: '**', component: HomeComponent }];
 
 @NgModule({

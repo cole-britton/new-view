@@ -19,7 +19,7 @@
   }
 
   .small-action-button {
-    background-color: #0070c9; 
+    background-color: #3F51B5; 
     border: none;
     color: white;
     text-align: center;
@@ -29,7 +29,7 @@
   }
 
   .small-action-button:hover {
-    background-color: #0063b4; 
+    background-color: rgb(75, 97, 221); 
   }
 
   .small-action-button-active {

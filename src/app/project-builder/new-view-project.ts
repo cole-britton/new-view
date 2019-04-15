@@ -1,4 +1,4 @@
-export interface INewViewPackage {
+export interface INewViewProject {
     id: string;
     totalCost: number;
     title: string;
@@ -30,4 +30,5 @@ export interface ISubOption {
     multi: boolean;
     value: number;
     selected: boolean;
+    applyAll: boolean;
 }

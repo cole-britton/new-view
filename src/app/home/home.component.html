@@ -13,11 +13,6 @@
     <div class="slices__slice slices__labeledSection">
       <div class="slices__content">
         <div class="section section-gifs -pad-100-v -theme--dark" data-color="light">
-          <div class="package-builder-header">
-            <div class="-lulo small-font" style="margin-bottom: 30px;">
-              our latest work
-            </div>
-          </div>
           <div class="our-work-gif-container">
               <div class="unit-gif-container" (click)="onNavigate('https://youtu.be/-phCWC9yDO0')">
                 <div class="gif-image"><img src="./assets/images/101_Fairmount_small.gif" alt="">
@@ -68,11 +63,11 @@
 
 
         <div class="flex-card-container">
-          <div class="nv-card">
+          <div class="nv-card -nv-card-home-height">
             <div class="nv-card-header -lulo -font-12">
               Social Boost
             </div>
-            <img class="nv-card-image" src="./assets/images/101_Fairmount_small.gif" alt="Fairmount">
+            <img class="nv-card-image" src="./assets/images/social-boost.png" alt="Social Boost">
             <div class="nv-card-bullets">
               <ul class="feature-list">
                 <li *ngFor="let feature of packageOne">
@@ -84,11 +79,11 @@
               <button mat-button class="small-button -lulo" (click)="packageSelected(1)">start here</button>
             </div>
           </div>
-          <div class="nv-card">
+          <div class="nv-card -nv-card-home-height">
             <div class="nv-card-header -lulo -font-12">
               Leasing Tool
             </div>
-            <img class="nv-card-image" src="./assets/images/803_slate_small.gif" alt="Fairmount">
+            <img class="nv-card-image" src="./assets/images/leasing-tool.png" alt="Leasing Tool">
             <div class="nv-card-bullets">
               <ul class="feature-list">
                 <li *ngFor="let feature of packageTwo">
@@ -100,11 +95,11 @@
               <button mat-button class="small-button -lulo" (click)="packageSelected(2)">start here</button>
             </div>
           </div>
-          <div class="nv-card">
+          <div class="nv-card -nv-card-home-height">
             <div class="nv-card-header -lulo -font-12">
               The Works
             </div>
-            <img class="nv-card-image" src="./assets/images/314_sunnyside_small.gif" alt="Fairmount">
+            <img class="nv-card-image" src="./assets/images/the-works.png" alt="The Works">
             <div class="nv-card-bullets">
               <ul class="feature-list">
                 <li *ngFor="let feature of packageThree">

@@ -14,8 +14,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { ResultsComponent } from './results/results.component';
-import { PackageBuilderComponent } from './package-builder/package-builder.component';
+import { ProjectBuilderComponent } from './project-builder/project-builder.component';
 import { ExampleDialog } from './example-dialog/example-dialog';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ExampleDialog } from './example-dialog/example-dialog';
     SurveyComponent,
     ResultsComponent,
     ExampleDialog,
-    PackageBuilderComponent
+    ProjectBuilderComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

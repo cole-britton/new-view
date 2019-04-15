@@ -1,13 +1,13 @@
 <div class="nv-content-container">
   <div class="nv-content">
-    <div class="nv-card">
+    <div class="-sticky nv-card">
       <div class="nv-card-header -lulo -font-12">
-        {{currentPackage.title}}
+        {{currentProject.title}}
       </div>
-      <img class="nv-card-image" src="./assets/images/803_slate_small.gif" alt="Fairmount">
+      <img class="nv-card-image" src="{{projectImage}}" alt="Fairmount">
       <div class="nv-card-bullets">
         <ul class="feature-list">
-          <li *ngFor="let feature of currentPackage.features">
+          <li *ngFor="let feature of currentProject.features">
             {{feature.title}}
           </li>
         </ul>
@@ -16,7 +16,7 @@
     <div class="features-container">
       <div class="features-content">
         <div class="features-content-header">
-          Build your New View Package
+          Build your New View Project
         </div>
         <div class="features-content-sub-header -grey -font-12">
           Select the features to fit your property. Once you have tailored your New View package to fit your needs, send
@@ -38,41 +38,59 @@
               <div class="category-actions-container">
                 <button *ngIf="!feature.added" mat-button class="small-action-button -lulo"
                   (click)="onFeatureAdd(feature)">add to project</button>
-                <mat-icon *ngIf="feature.added" class="added-to-project-indicator">done</mat-icon>
+                <div class="feature-action-button" *ngIf="feature.added">
+                  <mat-icon class="added-to-project-indicator">done</mat-icon>
+                </div>
+
               </div>
             </div>
 
             <div *ngFor="let option of feature.options" class="feature-option-container"
-              [class.-selected-border]="option.selected">
+              [class.-selected-border]="feature.added">
               <div class="feature-option">
                 <div class="feature-option-description ">
                   {{option.description}}
                 </div>
                 <div *ngIf="option.multi" class="feature-option-quantity">
-                  <span>qty:</span>
-                  <mat-select [(value)]="option.quantity">
+                  <mat-select [(value)]="option.quantity" (selectionChange)="calculateCostOfFeature(feature)">
                     <mat-option *ngFor="let q of quantities" [value]="q">{{q}}</mat-option>
                   </mat-select>
                 </div>
 
-                <div *ngIf="option.value !== '-1'" class="feature-option-value">
+                <div class="feature-option-value">
                   ${{option.value}} <span *ngIf="option.multi">ea</span>
                 </div>
               </div>
               <div *ngFor="let subOption of option.subOptions" class="feature-sub-option medium-font">
-                <div class="feature-sub-option-checkbox-contatiner">
-                  <mat-checkbox></mat-checkbox>
+                <div class="feature-sub-option-checkbox-contatiner" *ngIf="!subOption.multi">
+                  <mat-checkbox color="primary" [(ngModel)]="subOption.selected" (change)="calculateCostOfFeature(feature)"></mat-checkbox>
                 </div>
                 <div class="feature-sub-option-description">
                   {{subOption.description}}
                 </div>
+                <div *ngIf="subOption.multi" class="feature-option-quantity">
+                  <mat-select [(value)]="subOption.quantity"  (selectionChange)="calculateCostOfFeature(feature)">
+                    <mat-option *ngFor="let q of quantities" [value]="q">{{q}}</mat-option>
+                  </mat-select>
+                </div>
                 <div class="feature-sub-option-value">
-                  ${{subOption.value}} <span *ngIf="subOption.multi">ea</span>
+                  ${{subOption.value}} <span *ngIf="subOption.multi || subOption.applyAll">ea</span>
                 </div>
               </div>
 
             </div>
+
+
+
+            <div class="category-footer small-font">
+              <a *ngIf="feature.added" [@enterAnimation] (click)="onFeatureRemove(feature)">Remove</a>
+            </div>
           </div>
+        </div>
+        <div class="features-content-footer -font-12">
+          Have a unique request? Want to capture every unit in your lease up? Don’t hesitate to reach out. Our team is
+          skilled, dedicated, and inspired by a challenge. If you have an idea but aren’t quite sure how to convert it
+          into a reality, let us know. We’re looking forward to making all your marketing dreams come true.
         </div>
       </div>
     </div>
@@ -82,12 +100,12 @@
 <div class="nv-actions-bar">
   <div class="nv-actions-content">
     <div>
-      <div>
-        <b>${{currentPackage.totalCost}}</b>
-      </div>
-      <div class="small-font -grey">
+      <span class="xl-font" style="line-height: 42px;">
+        <b>${{currentProject.totalCost}}</b>
+      </span>
+      <span class="small-font -grey">
         +$500 setup fee
-      </div>
+      </span>
     </div>
     <div>
       <button mat-button class="small-button -lulo">send us your order</button>

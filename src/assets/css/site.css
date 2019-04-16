@@ -126,10 +126,16 @@ body{
 
 .main-menu > ul > li {
     padding: 16px 10px;
+    border-bottom: 1px solid #f2f2f2  
+}
+
+.main-menu > ul > li:last-child {
+    border-bottom: none;
 }
 
 .main-menu > ul > li:hover {
     cursor: pointer;
+    color: rgb(70, 70, 70);
 }
 
 .app-nav-item {

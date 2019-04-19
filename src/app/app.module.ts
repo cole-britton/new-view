@@ -17,6 +17,9 @@ import { ResultsComponent } from './results/results.component';
 import { ProjectBuilderComponent } from './project-builder/project-builder.component';
 import { ExampleDialog } from './example-dialog/example-dialog';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectSelectorComponent } from './project-selector/project-selector.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ResultsComponent,
     ExampleDialog,
     ProjectBuilderComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ProjectsComponent,
+    ProjectSelectorComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

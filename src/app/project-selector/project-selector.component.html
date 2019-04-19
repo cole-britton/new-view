@@ -1,0 +1,73 @@
+<div class="nv-content-container">
+  <div class="nv-content">
+    <div class="package-selector-container" style="padding: 100px 0;">
+      <div class="package-builder-start-container">
+        <div class="package-builder-header">
+          <div class="-lulo small-font">
+            Build your New View project
+          </div>
+          <div class="-font-12 -grey">
+            Start with a package currated by us to fit a specific need, or start from scratch and completely customize
+            your project.
+          </div>
+        </div>
+
+
+        <div class="flex-card-container">
+          <div class="nv-card -nv-card-home-height">
+            <div class="nv-card-header -lulo -font-12">
+              Social Boost
+            </div>
+            <img class="nv-card-image" src="./assets/images/social-boost.png" alt="Social Boost">
+            <div class="nv-card-bullets">
+              <ul class="feature-list">
+                <li *ngFor="let feature of packageOne">
+                  {{feature}}
+                </li>
+              </ul>
+            </div>
+            <div class="nv-card-actions">
+              <button mat-button class="small-button -lulo" (click)="packageSelected(1)">start here</button>
+            </div>
+          </div>
+          <div class="nv-card -nv-card-home-height">
+            <div class="nv-card-header -lulo -font-12">
+              Leasing Tool
+            </div>
+            <img class="nv-card-image" src="./assets/images/leasing-tool.png" alt="Leasing Tool">
+            <div class="nv-card-bullets">
+              <ul class="feature-list">
+                <li *ngFor="let feature of packageTwo">
+                  {{feature}}
+                </li>
+              </ul>
+            </div>
+            <div class="nv-card-actions">
+              <button mat-button class="small-button -lulo" (click)="packageSelected(2)">start here</button>
+            </div>
+          </div>
+          <div class="nv-card -nv-card-home-height">
+            <div class="nv-card-header -lulo -font-12">
+              The Works
+            </div>
+            <img class="nv-card-image" src="./assets/images/the-works.png" alt="The Works">
+            <div class="nv-card-bullets">
+              <ul class="feature-list">
+                <li *ngFor="let feature of packageThree">
+                  {{feature}}
+                </li>
+              </ul>
+            </div>
+            <div class="nv-card-actions">
+              <button mat-button class="small-button -lulo" (click)="packageSelected(3)">start here</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="centered-link">
+          <a (click)="packageSelected(0)">start from scratch...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

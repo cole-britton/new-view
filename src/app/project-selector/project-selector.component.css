@@ -1,0 +1,19 @@
+.-lulo{
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+  }
+
+  .small-button {
+    background-color: black; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 8px;
+  }
+
+  .small-button:hover {
+    background-color: rgb(20, 20, 20); 
+    cursor: pointer;
+  }

@@ -228,7 +228,7 @@ body{
   }
 
   .package-builder-header{
-      
+      line-height: 18px;
   }
 
 .package-builder-header>div{
@@ -2276,6 +2276,13 @@ a{
     }
     .newbiz{
         text-align:left
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .package-builder-header>div {
+        margin: 10px auto;
+        width: 280px;
     }
 }
 @media only screen and (max-width: 768px){

@@ -37,6 +37,8 @@
   .project-container {
     padding: 10px 0;
     border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: row;
   }
 
   .project-container>div{
@@ -45,5 +47,24 @@
   }
 
   .text-container{
-    margin: 10px 20px;
+    margin: 10px 0;
+  }
+
+  @media only screen and (max-width: 640px){
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .text-container {
+      width: 300px;
+    }
+
+    .media-container {
+      width: 300px;
+    }
+
+    .project-container>div{
+      margin: auto;
+    }
   }

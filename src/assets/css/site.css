@@ -2381,6 +2381,10 @@ h1{
 }
 @media only screen and (max-width: 640px){
 
+    .project-container {
+        flex-direction: column;
+    }
+
     .unit-gif-container {
         margin: 10px 0;
     }

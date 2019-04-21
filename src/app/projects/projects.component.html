@@ -1,6 +1,6 @@
 <div class="nv-content-container">
   <div class="nv-content">
-    <project-comp [title]="'test'" [description]="'hey there'" [image]="'./assets/images/101_Fairmount_small.gif'"
-      [link]="'https://youtu.be/-phCWC9yDO0'"></project-comp>
+    <project-comp *ngFor="let p of projects" [title]="p.title" [description]="p.description" [image]="p.image"
+      [link]="p.link"></project-comp>
   </div>
 </div>

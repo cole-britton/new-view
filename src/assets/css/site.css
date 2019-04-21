@@ -48,6 +48,10 @@ q:before,q:after,blockquote:before,blockquote:after{
     content:"";
     content:none
 }
+textarea{
+    min-height: 80px;
+    padding: 15px 9px;
+}
 
 a img{
     border:none
@@ -201,7 +205,30 @@ body{
     margin: 0;
 }
 
+.contact-form {
+    display: flex;
+    flex-flow: row wrap;
+}
 
+.form-input{
+    margin: 10px 0;
+}
+
+.-form-input-half-left-pad {
+    padding-left: 10px;
+}
+
+.-form-input-half-right-pad {
+    padding-right: 10px;
+}
+
+.-form-input-half{
+    width: 50%;
+}
+
+.-form-input-full{
+    width: 100%;
+}
 
 .package-select-button-wrapper {
     text-align: center;
@@ -292,6 +319,19 @@ body{
     text-align: center;
     color: white;
     margin: 40vh 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    margin-bottom: 5px;
+    text-transform: none;
+}
+
+.nv-header {
+    padding-top: 100px;
 }
 
 .nv-actions-bar{
@@ -649,6 +689,15 @@ a:hover {
     width: 40vw;
 }
 
+.thank-you-message{
+    text-align: center;
+    color: #333;
+}
+
+.mat-form-field {
+    font-family:"FFMarkPro",Helvetica !important;
+}
+
 .mat-select {
     font-family:"FFMarkPro",Helvetica !important;
 }
@@ -814,60 +863,23 @@ a{
 .a.is-active,.cms a:not([data-ignore-style="hover"]).is-active{
     color:#907f53
 }
-.h1,.cms h1{
-    font-size:16vw;
-    line-height:.76667;
-    letter-spacing:-.3vw;
-    text-transform:lowercase;
-    font-family:"FFMarkProBold",Helvetica;
-    font-stretch:normal;
-    font-style:normal
+h1{
+    font-family:"LuloClean",Helvetica;
+    font-style: normal;
+    font-size: 16px;
+    text-transform: none;
+    line-height: 1.5;
+    color: #000000;
+    display: block;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 15px;
+    clear: both;
+    font-weight: 700;
+    padding-top: 4px;
 }
-.h2,.cms h2{
-    font-size:35px;
-    line-height:1.5;
-    font-family:"FFMarkPro",Helvetica;
-    font-stretch:normal;
-    font-style:normal
-}
-.h3,.cms h3{
-    font-size:35px;
-    line-height:1.5;
-    font-family:"FFMarkPro",Helvetica;
-    font-stretch:normal;
-    font-style:normal
-}
-.h4,.cms h4{
-    font-size:35px;
-    line-height:1.5
-}
-.h5,.cms h5{
-    font-size:35px;
-    line-height:1.5
-}
-.h6,.cms h6{
-    font-size:35px;
-    line-height:1.5
-}
-.cms:not(.cms--meta) p+p,.cms:not(.cms--meta) p+ol,.cms:not(.cms--meta) p+ul,.cms:not(.cms--meta) p+h1,.cms:not(.cms--meta) p+h2,.cms:not(.cms--meta) p+h3,.cms:not(.cms--meta) p+h4,.cms:not(.cms--meta) p+h5,.cms:not(.cms--meta) p+h6,.cms:not(.cms--meta) ol+p,.cms:not(.cms--meta) ol+ol,.cms:not(.cms--meta) ol+ul,.cms:not(.cms--meta) ol+h1,.cms:not(.cms--meta) ol+h2,.cms:not(.cms--meta) ol+h3,.cms:not(.cms--meta) ol+h4,.cms:not(.cms--meta) ol+h5,.cms:not(.cms--meta) ol+h6,.cms:not(.cms--meta) ul+p,.cms:not(.cms--meta) ul+ol,.cms:not(.cms--meta) ul+ul,.cms:not(.cms--meta) ul+h1,.cms:not(.cms--meta) ul+h2,.cms:not(.cms--meta) ul+h3,.cms:not(.cms--meta) ul+h4,.cms:not(.cms--meta) ul+h5,.cms:not(.cms--meta) ul+h6,.cms:not(.cms--meta) h2+p,.cms:not(.cms--meta) h2+ol,.cms:not(.cms--meta) h2+ul,.cms:not(.cms--meta) h2+h1,.cms:not(.cms--meta) h2+h2,.cms:not(.cms--meta) h2+h3,.cms:not(.cms--meta) h2+h4,.cms:not(.cms--meta) h2+h5,.cms:not(.cms--meta) h2+h6,.cms:not(.cms--meta) h3+p,.cms:not(.cms--meta) h3+ol,.cms:not(.cms--meta) h3+ul,.cms:not(.cms--meta) h3+h1,.cms:not(.cms--meta) h3+h2,.cms:not(.cms--meta) h3+h3,.cms:not(.cms--meta) h3+h4,.cms:not(.cms--meta) h3+h5,.cms:not(.cms--meta) h3+h6,.cms:not(.cms--meta) h4+p,.cms:not(.cms--meta) h4+ol,.cms:not(.cms--meta) h4+ul,.cms:not(.cms--meta) h4+h1,.cms:not(.cms--meta) h4+h2,.cms:not(.cms--meta) h4+h3,.cms:not(.cms--meta) h4+h4,.cms:not(.cms--meta) h4+h5,.cms:not(.cms--meta) h4+h6,.cms:not(.cms--meta) h5+p,.cms:not(.cms--meta) h5+ol,.cms:not(.cms--meta) h5+ul,.cms:not(.cms--meta) h5+h1,.cms:not(.cms--meta) h5+h2,.cms:not(.cms--meta) h5+h3,.cms:not(.cms--meta) h5+h4,.cms:not(.cms--meta) h5+h5,.cms:not(.cms--meta) h5+h6,.cms:not(.cms--meta) h6+p,.cms:not(.cms--meta) h6+ol,.cms:not(.cms--meta) h6+ul,.cms:not(.cms--meta) h6+h1,.cms:not(.cms--meta) h6+h2,.cms:not(.cms--meta) h6+h3,.cms:not(.cms--meta) h6+h4,.cms:not(.cms--meta) h6+h5,.cms:not(.cms--meta) h6+h6{
-    margin-top:40px
-}
-.cms:not(.cms--meta) h1+p,.cms:not(.cms--meta) h1+ol,.cms:not(.cms--meta) h1+ul,.cms:not(.cms--meta) h1+h1,.cms:not(.cms--meta) h1+h2,.cms:not(.cms--meta) h1+h3,.cms:not(.cms--meta) h1+h4,.cms:not(.cms--meta) h1+h5,.cms:not(.cms--meta) h1+h6{
-    margin-top:80px
-}
-.cms+.cms--meta{
-    margin-top:40px
-}
-.cms--meta+.cms--paging{
-    margin-top:80px
-}
-.cms--paging{
-    margin-left:-20px;
-    margin-right:-20px
-}
-.cms--gold a{
-    color:#907f53
-}
+
 .svg{
     transition:fill 200ms cubic-bezier(0.25, 0.1, 0.25, 1)
 }
@@ -1890,6 +1902,10 @@ a{
 .-vbot{
     vertical-align:bottom
 }
+
+.-half{
+    width: 50%;
+}
 .-full{
     width:100%
 }
@@ -2205,9 +2221,6 @@ a{
     }
 }
 @media only screen and (max-width: 1024px){
-    .h1,.cms h1{
-        letter-spacing:normal
-    }
     .index__image{
         width:40%
     }
@@ -2289,8 +2302,22 @@ a{
     .header,.theme,.filter__label{
         height:100px
     }
+    .send-button{
+        width: 100%;
+    }
+    .-form-input-half{
+        width: 100%;
+    }
+
+    .-form-input-half-left-pad {
+        padding: 0;
+    }
+
+    .-form-input-half-right-pad {
+        padding: 0;
+    }
     .main{
-        padding-top:100px
+        padding-top:100px;
     }
     .project--standard .project__info{
         padding-bottom:80px
@@ -2345,12 +2372,6 @@ a{
     }
     .cms.p--meta p{
         font-size:14px
-    }
-    .h1,.cms h1{
-        font-size:16vw
-    }
-    .h2,.cms h2,.h3,.cms h3,.h4,.cms h4{
-        font-size:20px
     }
     .filter__color{
         height:16px;

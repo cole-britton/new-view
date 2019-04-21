@@ -1,7 +1,34 @@
 <div class="nv-content-container">
   <div class="nv-content">
-    <div class="contact-container" style="padding: 100px 0;">
-contact us
+    <div class="nv-header">
+      <h1>Contact Us</h1>
     </div>
+    <div>
+
+    </div>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendClicked()">
+      <div class="form-input -form-input-half -form-input-half-right-pad">
+        <mat-form-field class="-full">
+          <input matInput placeholder="Name" formControlName="name" required>
+          <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-input -form-input-half -form-input-half-left-pad">
+        <mat-form-field class="-full">
+          <input matInput placeholder="Email" formControlName="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-input -form-input-full">
+        <mat-form-field class="-full">
+          <textarea matInput placeholder="Message" formControlName="message" required></textarea>
+          <mat-error *ngIf="message.invalid">{{getErrorMessage(message)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-input -form-input-full">
+        <button *ngIf="!submitted" mat-button type="submit" class="send-button">send</button>
+        <div *ngIf="submitted" class="thank-you-message small-font">Thanks for contacting us. We'll get back to you as soon as possible.</div>
+      </div>
+    </form>
   </div>
 </div>

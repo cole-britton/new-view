@@ -63,13 +63,14 @@
               </div>
               <div *ngFor="let subOption of option.subOptions" class="feature-sub-option medium-font">
                 <div class="feature-sub-option-checkbox-contatiner" *ngIf="!subOption.multi">
-                  <mat-checkbox color="primary" [(ngModel)]="subOption.selected" (change)="calculateCostOfFeature(feature)"></mat-checkbox>
+                  <mat-checkbox color="primary" [(ngModel)]="subOption.selected"
+                    (change)="calculateCostOfFeature(feature)"></mat-checkbox>
                 </div>
                 <div class="feature-sub-option-description">
                   {{subOption.description}}
                 </div>
                 <div *ngIf="subOption.multi" class="feature-option-quantity">
-                  <mat-select [(value)]="subOption.quantity"  (selectionChange)="calculateCostOfFeature(feature)">
+                  <mat-select [(value)]="subOption.quantity" (selectionChange)="calculateCostOfFeature(feature)">
                     <mat-option *ngFor="let q of quantities" [value]="q">{{q}}</mat-option>
                   </mat-select>
                 </div>
@@ -80,8 +81,6 @@
 
             </div>
 
-
-
             <div class="category-footer small-font">
               <a *ngIf="feature.added" [@enterAnimation] (click)="onFeatureRemove(feature)">Remove</a>
             </div>
@@ -91,7 +90,11 @@
           Have a unique request? Want to capture every unit in your lease up? Don’t hesitate to reach out. Our team is
           skilled, dedicated, and inspired by a challenge. If you have an idea but aren’t quite sure how to convert it
           into a reality, let us know. We’re looking forward to making all your marketing dreams come true.
+          <div class="contact-us-link">
+            <a [@enterAnimation] (click)="goTo('contact')">Contact us</a>
+          </div>
         </div>
+
       </div>
     </div>
   </div>

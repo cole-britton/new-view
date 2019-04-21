@@ -1,0 +1,49 @@
+.gif-image {
+    position:relative;
+    width:300px;
+}
+.gif-image img {
+    width:100%;
+    vertical-align:top;
+}
+
+.gif-image:hover .gif-overlay {
+    opacity:1;
+    cursor: pointer;
+}
+
+.gif-overlay {
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+
+.gif-text {
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .project-container {
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .project-container>div{
+      display: inline-block;
+      vertical-align: top;
+  }
+
+  .text-container{
+    margin: 10px 20px;
+  }

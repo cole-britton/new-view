@@ -287,6 +287,10 @@ export class ProjectBuilderComponent implements OnInit {
     }
   }
 
+  goTo(route: string) {
+    this.router.navigateByUrl('/' + route);
+  }
+
   openDialog(t: string, c: string): void {
     this.dialog.open(ExampleDialog, {
       data: { title: t, content: c },

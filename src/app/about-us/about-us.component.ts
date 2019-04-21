@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  aboutUs = "New View was founded in 2018 with a bold purpose in mind: to change the way apartment communities market their availability, forever. In today’s modern age, customer needs evolve on a day to day basis, and saving time is more important than ever. The team at New View has dedicated their skillset to reimagining the prospect experience to benefit both the tenant and the leasing staff. We have to admit, we’re proud of our results. New View is placing engaging, cinematic, virtual walkthroughs in the hands of leasing professionals to equip them with a tool never before utilized by marketing strategies of the past. We love the way it works, and so do your prospects. Saving you time while creating a more engaged, educated, and interested potential tenant is our number one goal."
+  aboutUs = "At New View, there are two goals that inspire us. One is to assist rental, commercial, and condo properties drive qualified leads to their doors. The other is to help leasing agents and brokers close deals more effectively than ever. Our vision is grounded by these statements, and our products are a reflection of them. The team at New View is experienced in your industry and possesses a passion for innovation. Customers who engage with our media are left wide eyed and grateful, which means you spend less time pitching and more time closing. There is no resource more precious than time. Improving your efficiency is our top priority. "
 
   constructor() { }
 

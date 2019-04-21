@@ -1,0 +1,17 @@
+.order-dialog-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-dialog-heading{
+    margin: 0 0 15px 0;
+}
+
+.order-table{
+    width: 100%;
+    font-family:"FFMarkPro",Helvetica !important;
+}
+
+.price-cell{
+    text-align: right;
+}

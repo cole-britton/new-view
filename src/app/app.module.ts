@@ -8,7 +8,7 @@ import { PriceToolComponent } from './price-tool/price-tool.component';
 import { HomeComponent } from './home/home.component';
 import { SurveyComponent } from './survey/survey.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule, MatDialogModule, MatIconModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatCardModule, MatDialogModule, MatIconModule, MatTableModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -21,6 +21,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectSelectorComponent } from './project-selector/project-selector.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
+import { OrderDialog } from './order-dialog/order-dialog';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ProjectComponent } from './project/project.component';
     SurveyComponent,
     ResultsComponent,
     ExampleDialog,
+    OrderDialog,
     ProjectBuilderComponent,
     AboutUsComponent,
     ProjectsComponent,
@@ -48,6 +50,7 @@ import { ProjectComponent } from './project/project.component';
     MatInputModule,
     MatCardModule,
     MatIconModule,
+    MatTableModule,
     MatDialogModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
@@ -55,7 +58,8 @@ import { ProjectComponent } from './project/project.component';
   ],
   providers: [],
   entryComponents: [
-    ExampleDialog
+    ExampleDialog,
+    OrderDialog
   ],
   bootstrap: [AppComponent]
 })

@@ -31,7 +31,7 @@
                   {{feature.title}}
                 </div>
                 <div class="category-sub-header small-font">
-                  <a class="example-link" (click)="openDialog(feature.title, feature.description)">Need an
+                  <a class="example-link" (click)="openExampleDialog(feature.title, feature.description)">Need an
                     example?</a>
                 </div>
               </div>
@@ -111,7 +111,7 @@
       </span>
     </div>
     <div>
-      <button mat-button class="small-button -lulo">send us your order</button>
+      <button mat-button class="small-button -lulo" (click)="onOrderClicked()">send us your order</button>
     </div>
   </div>
 </div>

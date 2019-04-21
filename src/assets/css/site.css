@@ -113,6 +113,10 @@ body{
     cursor: pointer;
 }
 
+.-pointer:hover {
+    cursor: pointer;
+}
+
 .left, .right{
     flex: 1;
 }
@@ -168,7 +172,6 @@ body{
     line-height: 3.14286;
     font-weight: 400;
     letter-spacing: -.01em;
-    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
     color: #fff;
     position: relative;
     z-index: 1;
@@ -696,8 +699,9 @@ a:hover {
     margin: 10px 20px;
 }
 
-.example-dialog > mat-dialog-container {
-    width: 40vw;
+.nv-dialog > mat-dialog-container {
+    width: 90vw;
+    max-width: 650px;
 }
 
 .thank-you-message{

@@ -6,6 +6,7 @@ import { INewViewProject, IFeature } from './new-view-project';
 import { MatDialog } from '@angular/material';
 import { ExampleDialog } from '../example-dialog/example-dialog';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { OrderDialog } from '../order-dialog/order-dialog';
 
 @Component({
   selector: 'app-project-builder',
@@ -29,10 +30,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 export class ProjectBuilderComponent implements OnInit {
 
   currentProject: INewViewProject;
-  dialogTitle: string;
   projectImage: string;
-  dialogContent: string;
-  dialogImage: string;
   quantities: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   featuresCatalog: IFeature[] = [{
@@ -291,10 +289,27 @@ export class ProjectBuilderComponent implements OnInit {
     this.router.navigateByUrl('/' + route);
   }
 
-  openDialog(t: string, c: string): void {
+  openExampleDialog(t: string, c: string): void {
     this.dialog.open(ExampleDialog, {
       data: { title: t, content: c },
-      panelClass: 'example-dialog'
+      panelClass: 'nv-dialog'
     });
+  }
+
+  openOrderDialog(orderedProject: INewViewProject): void {
+    this.dialog.open(OrderDialog, {
+      data: { orderedProject: orderedProject },
+      panelClass: 'nv-dialog'
+    });
+  }
+
+  onOrderClicked(){
+    if(this.currentProject.totalCost === 0) {
+      this.openExampleDialog("Oops", "You haven't added anything to your project. Add a few things and then try to send us your order again.")
+    } else {
+      this.openOrderDialog(this.currentProject);
+    }
+
+
   }
 }

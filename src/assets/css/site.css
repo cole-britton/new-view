@@ -365,6 +365,7 @@ label {
 .bio {
     text-align: justify;
     line-height: 22px;
+    font-size: 12px;
 }
 
 .headshot-img{
@@ -2360,9 +2361,6 @@ h1{
     .nv-content {
         padding: 88px 22px;
     }
-    .tagline{
-        font-size: 12px;
-    }
     .flex-card-container{
         display: flex;
         flex-direction: column;
@@ -2513,9 +2511,12 @@ h1{
         display:none
     }
 
+    .about-us-container {
+        font-size: 12px;
+    }
+
     .about-us {
         margin: auto;
-        font-size: 12px;
     }
 }
 @media only screen and (min-width: 1800px){
@@ -2567,11 +2568,20 @@ h1{
     .cover-photo{
         margin-left: -550px;
     }
-}
-
-@media only screen and (max-width: 400px){
     .xl-font {
         font-size: 32px;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .us-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .person-container{
+        width: 80%;
+        padding: 0;
+        margin: 32px 0;
     }
 }
 

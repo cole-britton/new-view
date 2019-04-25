@@ -508,6 +508,8 @@ font-weight: bold;
     top: 20px;
 }
 
+
+
 .category-labels-container{
 }
 
@@ -748,6 +750,9 @@ a:hover {
     text-align: center;
     color: #333;
 }
+.mat-table{
+    font-family:"FFMarkPro",Helvetica !important;
+}
 
 .mat-form-field {
     font-family:"FFMarkPro",Helvetica !important;
@@ -781,6 +786,10 @@ a:hover {
 .mat-dialog-actions > button {
     float: right !important;
     margin-left: auto !important;
+}
+
+.mat-column-price {
+    text-align: right;
 }
 
 .slider {

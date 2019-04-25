@@ -10,8 +10,51 @@
 .order-table{
     width: 100%;
     font-family:"FFMarkPro",Helvetica !important;
+    margin: 32px 0;
 }
 
 .price-cell{
     text-align: right;
+}
+
+.total-container{
+    font-size: 32px;
+    padding: 12px 24px;
+    text-align: right;
+    width: 100%;
+}
+
+.button-container{
+    margin: 10px 0;
+}
+
+.-lulo{
+    font-family:"LuloClean",Helvetica;
+    font-stretch:normal;
+    font-style:normal
+  }
+
+  .small-button {
+    background-color: black; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 8px;
+  }
+
+  .small-button:hover {
+    background-color: rgb(20, 20, 20); 
+    cursor: pointer;
+  }
+
+
+  @media only screen and (max-width: 500px){
+    .button-container{
+        width: 100%;
+    }
+
+    .small-button {
+        width: 100%;
+    }
 }

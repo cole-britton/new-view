@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { INewViewProject } from '../project-builder/new-view-project';
+import { parse } from 'querystring';
 
 export interface DialogData {
     orderedProject: INewViewProject;
@@ -14,6 +15,7 @@ export interface DialogData {
 export class OrderDialog implements OnInit{
 
     tableData = [];
+    totalCost: number = 0;
     columnsToDisplay = ['feature', 'price'];
 
     constructor(
@@ -26,7 +28,11 @@ export class OrderDialog implements OnInit{
 
     ngOnInit() {
         this.tableData = this.data.orderedProject.features.map(f => ({title: f.title, totalCost: f.totalCost}));
-        console.log(this.tableData);
+        this.tableData.push({title: "Setup fee", totalCost: "500"});
+
+        this.tableData.forEach(f => {
+            this.totalCost += parseInt(f.totalCost);
+        });
     }
 
 

@@ -187,7 +187,7 @@ export class ProjectBuilderComponent implements OnInit {
       }]
     }],
     added: false,
-    totalCost: 250
+    totalCost: 195
   }];
 
   constructor(private router: Router, private db: AngularFireDatabase, private ar: ActivatedRoute, public dialog: MatDialog) {

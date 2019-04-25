@@ -310,18 +310,31 @@ body{
     background-color: #000;
 }
 
+.cover-text-container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .cover-photo{
     object-fit: cover;
     max-width: 2000px;
     min-width: 1000px;
-    width: 120%;
     object-position: center;
 }
 
 .cover-text {
-    text-align: center;
     color: white;
-    margin: 40vh 20px;
+    margin: 40vh auto;
+    max-width: 980px;
+    padding: 0 22px;
+    font-size:8vw;
 }
 
 label {
@@ -331,6 +344,32 @@ label {
     text-align: left;
     margin-bottom: 5px;
     text-transform: none;
+}
+
+.us-container{
+    margin: 160px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.person-container{
+    padding: 20px;
+    width: 35%;
+}
+
+.bio-header {
+    text-align: center;
+    margin-top:12px;
+}
+
+.bio {
+    text-align: justify;
+    line-height: 22px;
+}
+
+.headshot-img{
+    border-radius: 50%;
+    width: 100%;
 }
 
 .nv-header {
@@ -2191,6 +2230,12 @@ h1{
         width:16px
     }
 }
+
+@media only screen and (min-width: 1415px){
+    .cover-text{
+        font-size: 113px;
+    }
+}
 @media only screen and (max-width: 1366px){
     .index__col+.index__col{
         padding-left:6vw
@@ -2515,6 +2560,12 @@ h1{
 @media only screen and (min-width: 600px){
     .-wrap-copy{
         max-width:600px
+    }
+}
+
+@media only screen and (max-width: 411px){
+    .cover-photo{
+        margin-left: -550px;
     }
 }
 

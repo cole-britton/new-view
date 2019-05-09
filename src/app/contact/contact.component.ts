@@ -33,10 +33,11 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  get f() { return this.contactForm.controls; }
+
 
   getErrorMessage(formControl: FormControl) {
-    return formControl.hasError('required') ? 'You must enter a value' :
-      formControl.hasError('email') ? 'Not a valid email' : '';
+    return formControl.hasError('required') ? 'Can\'t be left blank' : formControl.hasError('email') ? 'Not a valid email' : '';
   }
 
   sendClicked() {

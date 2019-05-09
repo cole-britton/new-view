@@ -15,8 +15,9 @@
       </div>
       <div class="form-input -form-input-half -form-input-half-left-pad">
         <mat-form-field class="-full">
-          <input matInput placeholder="Email" formControlName="email" required>
-          <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
+          <input matInput placeholder="Email" type="email" formControlName="email" required email>
+          <mat-error *ngIf="f.email.errors.required">{{getErrorMessage(message)}}</mat-error>
+          <mat-error *ngIf="f.email.errors.email">Email must be a valid email address</mat-error>
         </mat-form-field>
       </div>
       <div class="form-input -form-input-full">
@@ -27,7 +28,8 @@
       </div>
       <div class="form-input -form-input-full">
         <button *ngIf="!submitted" mat-button type="submit" class="send-button">send</button>
-        <div *ngIf="submitted" class="thank-you-message small-font">Thanks for contacting us. We'll get back to you as soon as possible.</div>
+        <div *ngIf="submitted" class="thank-you-message small-font">Thanks for contacting us. We'll get back to you as
+          soon as possible.</div>
       </div>
     </form>
   </div>

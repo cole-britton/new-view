@@ -1,25 +1,58 @@
 <div class="order-dialog-header">
-    <h1 class="order-dialog-heading">Order Details</h1>
+    <h1 *ngIf="showDetails" class="order-dialog-heading">Order Details</h1>
+    <h1 *ngIf="!showDetails" class="order-dialog-heading">Your Info</h1>
     <div>
         <mat-icon (click)="onClose()" class="-pointer">clear</mat-icon>
     </div>
 </div>
-<table mat-table class="order-table" [dataSource]="tableData">
-    <ng-container matColumnDef="feature">
-        <th mat-header-cell *matHeaderCellDef style="padding: 0;"> Feature </th>
-        <td mat-cell *matCellDef="let feat" style="padding: 0 10px 0 0;"> {{feat.title}} </td>
-    </ng-container>
-    <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef style="text-align: right;padding: 0;"> Price </th>
-        <td mat-cell class="price-cell" *matCellDef="let feat" style="padding: 0;"> ${{feat.totalCost}}.00 </td>
-    </ng-container>
+<div *ngIf="showDetails">
+    <table mat-table class="order-table" [dataSource]="tableData">
+        <ng-container matColumnDef="feature">
+            <th mat-header-cell *matHeaderCellDef style="padding: 0;"> Feature </th>
+            <td mat-cell *matCellDef="let feat" style="padding: 0 10px 0 0;"> {{feat.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef style="text-align: right;padding: 0;"> Price </th>
+            <td mat-cell class="price-cell" *matCellDef="let feat" style="padding: 0;"> ${{feat.totalCost}}.00 </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
-</table>
-<div class="total-container">
-    <span class="small-font -grey">total:</span> ${{totalCost}}
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </table>
+    <div class="total-container">
+        <span class="small-font -grey">total:</span> ${{totalCost}}
+    </div>
 </div>
+
+<div *ngIf="!showDetails">
+    <form class="order-form" [formGroup]="orderForm">
+        <div class="form-input -form-input-half -form-input-half-right-pad">
+            <mat-form-field class="-full">
+                <input matInput placeholder="Name" formControlName="name" required>
+                <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-input -form-input-half -form-input-half-left-pad">
+            <mat-form-field class="-full">
+                <input matInput placeholder="Email" type="email" formControlName="email" required email>
+                <mat-error *ngIf="f.email.errors.required">{{getErrorMessage(message)}}</mat-error>
+                <mat-error *ngIf="f.email.errors.email">Email must be a valid email address</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-input -form-input-full">
+            <mat-form-field class="-full">
+                <textarea matInput placeholder="Message" formControlName="message"></textarea>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+
 <div class="button-container">
-    <button mat-button class="small-button -lulo" (click)="onOrderClicked()">send us your order</button>
+    <button *ngIf="showDetails && !submitted" mat-button class="small-button -lulo" (click)="onLooksGood()">looks
+        good</button>
+    <button *ngIf="!showDetails && !submitted" mat-button class="small-button -lulo" (click)="onSubmitOrder()">send
+        us your
+        order</button>
+    <div *ngIf="submitted" class="thank-you-message small-font">Thank you for completing your order. We will respond
+        within 1-3 business days with next steps.</div>
 </div>

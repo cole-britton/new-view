@@ -79,11 +79,13 @@ export class OrderDialog implements OnInit {
     }
 
     submitOrder(oF: {}) {
-        this.submitted = true;
         this.orderPackage.name = oF['name'];
         this.orderPackage.email = oF['email'];
         this.orderPackage.message = oF['message'];
-        console.log(this.orderPackage);
+        this.db.list('orders').push(this.orderPackage)
+            .then(_ => {
+                this.submitted = true;
+            });
     }
 
 }

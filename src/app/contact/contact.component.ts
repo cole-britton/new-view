@@ -52,7 +52,7 @@ export class ContactComponent implements OnInit {
     this.db.list('contactUs').push(cf)
       .then(_ => {
         this.submitted = true;
-      })
+      });
   }
 
 }

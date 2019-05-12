@@ -16,8 +16,8 @@
       <div class="form-input -form-input-half -form-input-half-left-pad">
         <mat-form-field class="-full">
           <input matInput placeholder="Email" type="email" formControlName="email" required email>
-          <mat-error *ngIf="f.email.errors.required">{{getErrorMessage(message)}}</mat-error>
-          <mat-error *ngIf="f.email.errors.email">Email must be a valid email address</mat-error>
+          <mat-error *ngIf="f.email.errors?.required">{{getErrorMessage(message)}}</mat-error>
+          <mat-error *ngIf="f.email.errors?.email">Email must be a valid email address</mat-error>
         </mat-form-field>
       </div>
       <div class="form-input -form-input-full">

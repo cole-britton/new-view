@@ -25,24 +25,34 @@
 </div>
 
 <div *ngIf="!showDetails">
-    <form class="order-form" [formGroup]="orderForm">
-        <div class="form-input -form-input-half -form-input-half-right-pad">
-            <mat-form-field class="-full">
-                <input matInput placeholder="Name" formControlName="name" required>
-                <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
-            </mat-form-field>
+    <form class="order-form" [formGroup]="orderForm" (ngSubmit)="onSubmitOrder()">
+        <div class="name-and-email-container">
+            <div class="form-input -form-input-half -form-input-half-right-pad">
+                <mat-form-field class="-full">
+                    <input matInput placeholder="Name" formControlName="name" required>
+                    <mat-error *ngIf="name.invalid">{{getErrorMessage(name)}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-input -form-input-half -form-input-half-left-pad">
+                <mat-form-field class="-full">
+                    <input matInput placeholder="Email" type="email" formControlName="email" required email>
+                    <mat-error *ngIf="f.email.errors?.required">{{getErrorMessage(message)}}</mat-error>
+                    <mat-error *ngIf="f.email.errors?.email">Email must be a valid email address</mat-error>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="form-input -form-input-half -form-input-half-left-pad">
-            <mat-form-field class="-full">
-                <input matInput placeholder="Email" type="email" formControlName="email" required email>
-                <mat-error *ngIf="f.email.errors.required">{{getErrorMessage(message)}}</mat-error>
-                <mat-error *ngIf="f.email.errors.email">Email must be a valid email address</mat-error>
-            </mat-form-field>
-        </div>
+
         <div class="form-input -form-input-full">
             <mat-form-field class="-full">
                 <textarea matInput placeholder="Message" formControlName="message"></textarea>
             </mat-form-field>
+        </div>
+
+        <div class="form-input -form-input-full">
+            <button *ngIf="!submitted" mat-button type="submit" class="small-button -lulo">complete your order</button>
+            <div *ngIf="submitted" class="thank-you-message small-font">Thank you for completing your order. We will
+                respond
+                within 1-3 business days with next steps.</div>
         </div>
     </form>
 </div>
@@ -50,9 +60,4 @@
 <div class="button-container">
     <button *ngIf="showDetails && !submitted" mat-button class="small-button -lulo" (click)="onLooksGood()">looks
         good</button>
-    <button *ngIf="!showDetails && !submitted" mat-button class="small-button -lulo" (click)="onSubmitOrder()">send
-        us your
-        order</button>
-    <div *ngIf="submitted" class="thank-you-message small-font">Thank you for completing your order. We will respond
-        within 1-3 business days with next steps.</div>
 </div>

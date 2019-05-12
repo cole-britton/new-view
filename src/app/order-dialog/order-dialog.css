@@ -48,6 +48,10 @@
     cursor: pointer;
   }
 
+  .name-and-email-container {
+      display: flex;
+  }
+
 
   @media only screen and (max-width: 500px){
     .button-container{
@@ -57,4 +61,11 @@
     .small-button {
         width: 100%;
     }
-}
+
+  }
+
+  @media only screen and (max-width: 768px){
+    .name-and-email-container {
+        display: inherit;
+    }
+  }

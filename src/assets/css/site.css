@@ -429,7 +429,8 @@ label {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 }
 
 .features-container {

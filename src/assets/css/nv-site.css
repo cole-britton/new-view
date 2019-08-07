@@ -365,7 +365,6 @@ label {
 .bio {
     text-align: justify;
     line-height: 22px;
-    font-size: 12px;
 }
 
 .headshot-img{
@@ -610,6 +609,10 @@ font-weight: bold;
 
 .medium-font{
     font-size: 12px;
+}
+
+.large-font {
+    font-size: 14px;
 }
 
 .xl-font {
